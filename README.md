@@ -6,7 +6,9 @@
 
 ## Table of Contents
   * [Technology Stack](#technology-stack)
+  * [User Story](#user-story)
   * [Acceptance Criteria](#acceptance-criteria)
+  * [Project Requirements](#project-requirements)
   * [The Team](#the-team)
   * [The Team Tasks](#the-team-tasks)
   * [Screenshot](#screenshot)
@@ -21,7 +23,19 @@
 ![CSS](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
 ![javaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
+## User Story
+
+```md
+Add user story here once application plan is finalized
+```
+
 ## Acceptance Criteria
+
+```md
+Add acceptance criteria here once application plan is finalized
+```
+
+## Project Requirements
 
 ```md
 Use a CSS framework other than Bootstrap.
