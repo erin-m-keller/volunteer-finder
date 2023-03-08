@@ -1,0 +1,43 @@
+/************************************************
+*
+*   Main Stylesheet
+*   @version (1.0)
+*   @date (2023)
+*
+*   1.) GENERAL ______________________ @general
+*   2.) HEADER _______________________ @header
+*   3.) MAIN _________________________ @main
+*   4.) FOOTER _______________________ @footer
+*
+************************************************/
+
+/************************************************
+   GENERAL                              @general
+
+   The base styles for the page
+   Includes utility class styles
+************************************************/
+:root {
+  --font-main-style: "Poiret One", sans-serif; /* placeholder font */
+}
+p {
+  font-family: var(--font-main-style);
+}
+
+/************************************************
+   HEADER                                @header
+
+   The styles for the header
+************************************************/
+
+/************************************************
+   MAIN                                     @main
+
+   The styles for the main content
+************************************************/
+
+/************************************************
+   FOOTER                                 @footer
+
+   The styles for the footer
+************************************************/
