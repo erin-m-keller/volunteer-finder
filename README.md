@@ -54,14 +54,11 @@ used, screenshot, and link to the deployed application).
 ```
 
 ## The Team
-
-**// TODO: Add link to Github profile**
-
-[Kevin Rhode]()  
-[Joshua Cavell]()  
-[Erin Keller](https://github.com/erin-m-keller) 
-
-**Remaining team members TBD**
+ 
+[Kevin Rhode](https://github.com/KevinRhode)  
+[Joshua Cavell](https://github.com/xclusive36)  
+[Dylan Wednieski](https://github.com/iam3dski)  
+[Erin Keller](https://github.com/erin-m-keller)
 
 ## The Team Tasks
 
