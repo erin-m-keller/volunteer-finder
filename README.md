@@ -62,9 +62,9 @@ used, screenshot, and link to the deployed application).
 
 ## The Team Tasks
 
-**Kevin Rhode**: [tasks go here]
-**Joshua Cavell**: [tasks go here]
-**Dylan Wednieski**: [tasks go here]
+**Kevin Rhode**: [tasks go here]  
+**Joshua Cavell**: [tasks go here]  
+**Dylan Wednieski**: [tasks go here]  
 **Erin Keller**: [tasks go here]
 
 ## Screenshot
