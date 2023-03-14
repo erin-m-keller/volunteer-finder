@@ -62,7 +62,10 @@ used, screenshot, and link to the deployed application).
 
 ## The Team Tasks
 
-**// TODO: Add what each team member worked on during the project**
+**Kevin Rhode**: [tasks go here]
+**Joshua Cavell**: [tasks go here]
+**Dylan Wednieski**: [tasks go here]
+**Erin Keller**: [tasks go here]
 
 ## Screenshot
 
