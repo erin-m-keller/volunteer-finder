@@ -11,17 +11,33 @@
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
   </head>
   <body>
-    <header></header>
+    <header>
+      <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="./">
+            <i class="fa-solid fa-hand-holding-heart"></i>&nbsp;&nbsp;MAVP
+          </a>
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+      </nav>
+    </header>
     <main>
-      <div class="tabs">
-        <ul>
-          <li class="is-active tab"><a onclick="switchLogin(event,'login')">Login</a></li>
-          <li class="tab"><a onclick="switchLogin(event,'sign-up')">Sign Up</a></li>
-        </ul>
+      <div class="hero">
+        <h1>My Awesome Volunteer Portal</h1>
       </div>
-      <div class="container section">
-        <form id="sign-in-form">
-          <div id="login" class="content-tab">
+      <div class="signup-form">
+        <div class="tabs">
+          <ul>
+            <li class="is-active" data-target="login"><a onclick="toggleLogin('login')">Login</a></li>
+            <li data-target="sign-up"><a onclick="toggleLogin('sign-up')">Sign Up</a></li>
+          </ul>
+        </div>
+        <div class="tab-content" id="login">
+          <form>
             <div class="field">
               <label class="label">Email</label>
               <div class="control">
@@ -41,7 +57,7 @@
             <button id="sign-out" class="button is-primary">Sign out</button>
         </form>
         </div>
-        <div id="sign-up" class="content-tab" style="display:none">
+        <div class="tab-content" id="sign-up" style="display:none">
           <form id="sign-up-form">
             <div class="field">
               <label class="label">First Name</label>
@@ -83,10 +99,11 @@
         </div>
       </div>
     </main>
-    <footer class="footer">
+    <footer class="footer has-text-centered is-flex-align-items-flex-end mt-auto">
       <h3>&copy; 2023</h3>
     </footer>
     <script src="./assets/js/auth.js"></script>
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/fontawesome.min.js"></script>
   </body>
 </html>
