@@ -1,26 +1,35 @@
-function switchLogin(evt, tabName) {
-  var i, x, tablinks;
-  x = document.getElementsByClassName("content-tab");
-  for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tab");
-  console.log(tablinks);
-  for (i = 0; i < x.length; i++) {
-    tablinks[i].classList.toggle('is-active');
-  }
-  document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += " is-active";
-}
+// Initialize global variables
 let preferredUsers = [];
 let savedPreferredUsers = [];
 
+/**
+ * @init
+ * Runs on page load
+ */
 function init() {
-    
-    // this will return and array of obj's
-    retriveUsers(10);   
+  // this will return and array of obj's
+  retriveUsers(10);   
+}
+init();
 
-
+/**
+ * @toggleLogin
+ * Allows the user to toggle between the
+ * login screen and create account screen
+ */
+function toggleLogin (elemId) {
+  // initialize variables
+  var tabContent = document.querySelectorAll('.tab-content');
+  // loop through all elements with the class "tab-content"
+  for (var i = 0; i < tabContent.length; i++) {
+    // initialize variables
+    var contentElement = tabContent[i],
+        dataTarget = document.querySelector(`[data-target="${contentElement.id}"]`);
+    // hide the tab content
+    contentElement.style.display = contentElement.id === elemId ? 'block' : 'none';
+    // switch the is-active class on the tabs
+    dataTarget.classList[contentElement.id === elemId ? 'add' : 'remove']('is-active');
+  }
 }
 
 function retriveUsers(numHowManyUsersYouWant){
@@ -62,19 +71,4 @@ function savePreferredUsers(userObj){
     
     localStorage.setItem()
 
-}
-
-init();
-function switchLogin(evt, tabName) {
-  var i, x, tablinks;
-  x = document.getElementsByClassName("content-tab");
-  for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tab");
-  for (i = 0; i < x.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" is-active", "");
-  }
-  document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += " is-active";
 }
