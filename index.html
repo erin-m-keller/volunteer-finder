@@ -37,26 +37,28 @@
           </ul>
         </div>
         <div class="tab-content" id="login">
-          <form>
+          <form id="sign-in-form">
             <div class="field">
               <label class="label">Email</label>
               <div class="control">
-                <input class="input" type="text" placeholder="Enter Email">
+                <input id="sign-in-user-email" class="input" type="text" placeholder="Enter Email">
               </div>
               <p class="help">Enter Email</p>
             </div>
             <div class="field">
               <label class="label">Password</label>
               <div class="control">
-                <input class="input" type="text" placeholder="Enter Password">
+                <input id="sign-in-user-password" class="input" type="password" placeholder="Enter Password">
               </div>
               <p class="help">Enter Password</p>
             </div>
-            <button class="button is-primary">Login</button>
-          </form>
+            <button id="sign-in" type="submit" class="button is-primary">Login</button>
+            <button id="sign-in-google" class="button is-primary">Sign in with Google</button>
+            <button id="sign-out" class="button is-primary">Sign out</button>
+        </form>
         </div>
         <div class="tab-content" id="sign-up" style="display:none">
-          <form>
+          <form id="sign-up-form">
             <div class="field">
               <label class="label">First Name</label>
               <div class="control">
@@ -81,14 +83,14 @@
             <div class="field">
               <label class="label">Email</label>
               <div class="control">
-                <input class="input" type="text" placeholder="Enter Email">
+                <input id="sign-up-user-email" class="input" type="text" placeholder="Enter Email">
               </div>
               <p class="help">Enter Email</p>
             </div>
             <div class="field">
               <label class="label">Password</label>
               <div class="control">
-                <input class="input" type="text" placeholder="Enter Password">
+                <input id="sign-up-user-password" class="input" type="password" placeholder="Enter Password">
               </div>
               <p class="help">Enter Password</p>
             </div>
@@ -100,6 +102,7 @@
     <footer class="footer has-text-centered is-flex-align-items-flex-end mt-auto">
       <h3>&copy; 2023</h3>
     </footer>
+    <script src="./assets/js/auth.js"></script>
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/fontawesome.min.js"></script>
   </body>
