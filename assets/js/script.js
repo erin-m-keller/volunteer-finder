@@ -23,12 +23,12 @@ function toggleLogin (elemId) {
   // loop through all elements with the class "tab-content"
   for (var i = 0; i < tabContent.length; i++) {
     // initialize variables
-    var contentElement = tabContent[i],
-        dataTarget = document.querySelector(`[data-target="${contentElement.id}"]`);
-    // hide the tab content
-    contentElement.style.display = contentElement.id === elemId ? 'block' : 'none';
-    // switch the is-active class on the tabs
-    dataTarget.classList[contentElement.id === elemId ? 'add' : 'remove']('is-active');
+    var contentElem = tabContent[i],
+        dataTarget = document.querySelector(`[data-target="${contentElem.id}"]`);
+    // hide or show the tab content based on contentElem.id
+    contentElem.style.display = contentElem.id === elemId ? 'block' : 'none';
+    // switch the is-active class on the tabs based on contentElem.id
+    dataTarget.classList[contentElem.id === elemId ? 'add' : 'remove']('is-active');
   }
 }
 
