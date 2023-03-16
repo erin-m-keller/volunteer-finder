@@ -1,14 +1,13 @@
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyD_Q9AqRBFpGSbMloK-LtlnTpP4XMWyYsk",
-  authDomain: "litestep-1242.firebaseapp.com",
-  databaseURL: "https://litestep-1242.firebaseio.com",
-  projectId: "litestep-1242",
-  storageBucket: "litestep-1242.appspot.com",
-  messagingSenderId: "988069859398",
-  appId: "1:988069859398:web:78bb740bdcd02ffe573a47",
-  measurementId: "G-5SLYKEN8J6",
+  apiKey: "AIzaSyDWBrlLNdOjRZy3IiLXPi1dVf4F1beGYT4",
+  authDomain: "project-one-72d51.firebaseapp.com",
+  projectId: "project-one-72d51",
+  storageBucket: "project-one-72d51.appspot.com",
+  messagingSenderId: "44015512234",
+  appId: "1:44015512234:web:83de504174f820c4187ed3",
+  measurementId: "G-S5PEL5HZ9T",
 };
 
 function loadFirebase() {
@@ -17,13 +16,6 @@ function loadFirebase() {
     (firebase) => {
       // Import the app module
       const app = firebase.initializeApp(firebaseConfig); // Initialize the app
-
-      import(
-        "https://www.gstatic.com/firebasejs/9.17.2/firebase-analytics.js"
-      ).then((fireAnalytics) => {
-        // Import the analytics module
-        fireAnalytics.getAnalytics(app); // Initialize the analytics module
-      });
 
       import("https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js").then(
         (fireAuth) => {
