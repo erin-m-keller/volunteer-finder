@@ -36,6 +36,7 @@ function loadFirebase() {
           ); // Get the user password input
 
           const signOutBtn = document.getElementById("sign-out"); // Get the sign-out button
+          const myAccountBtn = document.getElementById("my-account"); // Get the my-account button
           const signInBtnGoogle = document.getElementById("sign-in-google"); // Get the sign-in with Google button
 
           signUpForm.addEventListener("submit", (e) => {
@@ -107,6 +108,7 @@ function loadFirebase() {
               console.log("User signed out");
               user = null;
               signOutBtn.style.display = "none"; // Hide the sign-out button
+              myAccountBtn.style.display = "none"; // Hide the my-account button
               location.replace("index.html");
             });
           });
