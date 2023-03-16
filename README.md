@@ -22,6 +22,7 @@
 ![HTML5](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
 ![javaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![bulma](./assets/images/bulma.svg)
 
 ## User Story
 
@@ -41,7 +42,8 @@ THEN I view the main dashboard
 WHEN I view the dashboard
 THEN I am presented with a list of available volunteers
 WHEN I click the volunteer
-THEN I am presented with their information (avatar, name, city/state, phone/email) and a map with their location and a link to contact the volunteer
+THEN I am presented with their information (avatar, name, city/state, phone/email)  
+and a map with their location and a link to contact the volunteer
 ```
 
 ## Project Requirements
