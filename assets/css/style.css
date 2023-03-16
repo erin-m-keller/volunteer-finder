@@ -54,20 +54,36 @@ h1 {
    margin-top: 2rem;
    margin-bottom: 2rem;
  }
+
 /************************************************
    MAIN                                     @main
 
    The styles for the main content
 ************************************************/
+.hero {
+   text-align: center;
+   padding: 1em;
+   background-color: #FFF;
+}
 .signup-form {
    padding: 1em;
    margin: 1em auto;
-   width: 50%;
-   max-width: 1200px;
+   width: 90%;
    background-color: #FFF;
 }
+
+@media screen and (min-width: 700px) {
+   .signup-form {
+      width: 50%;
+      max-width: 1200px;
+   }
+}
+
 /************************************************
    FOOTER                                 @footer
 
    The styles for the footer
 ************************************************/
+.footer {
+   text-align: center;
+}

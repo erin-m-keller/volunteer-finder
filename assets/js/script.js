@@ -1,14 +1,19 @@
-
-function switchLogin(evt, tabName) {
-  var i, x, tablinks;
-  x = document.getElementsByClassName("content-tab");
-  for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";
+/**
+ * @toggleLogin
+ * Allows the user to toggle between the
+ * login screen and create account screen
+ */
+function toggleLogin (elemId) {
+  // initialize variables
+  var tabContent = document.querySelectorAll('.tab-content');
+  // loop through all elements with the class "tab-content"
+  for (var i = 0; i < tabContent.length; i++) {
+    // initialize variables
+    var contentElem = tabContent[i],
+        dataTarget = document.querySelector(`[data-target="${contentElem.id}"]`);
+    // hide or show the tab content based on contentElem.id
+    contentElem.style.display = contentElem.id === elemId ? 'block' : 'none';
+    // switch the is-active class on the tabs based on contentElem.id
+    dataTarget.classList[contentElem.id === elemId ? 'add' : 'remove']('is-active');
   }
-  tablinks = document.getElementsByClassName("tab");
-  for (i = 0; i < x.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" is-active", "");
-  }
-  document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += " is-active";
 }
