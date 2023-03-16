@@ -107,6 +107,7 @@ function loadFirebase() {
               console.log("User signed out");
               user = null;
               signOutBtn.style.display = "none"; // Hide the sign-out button
+              location.replace("index.html");
             });
           });
         }
