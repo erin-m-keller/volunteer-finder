@@ -15,70 +15,73 @@
       <h1>My Awesome Volunteer Portal</h1>
     </header>
     <main>
-      <div class="tabs">
-        <ul>
-          <li class="is-active tab"><a onclick="switchLogin(event,'login')">Login</a></li>
-          <li class="tab"><a onclick="switchLogin(event,'sign-up')">Sign Up</a></li>
-        </ul>
-      </div>
-      <div class="container section">
-        <form>
-          <div id="login" class="content-tab">
-            <div class="field">
-              <label class="label">Email</label>
-              <div class="control">
-                <input class="input" type="text" placeholder="Enter Email">
-              </div>
-              <p class="help">Enter Email</p>
-            </div>
-            <div class="field">
-              <label class="label">Password</label>
-              <div class="control">
-                <input class="input" type="text" placeholder="Enter Password">
-              </div>
-              <p class="help">Enter Password</p>
-            </div>
-            <button class="button is-primary">Login</button>
-        </form>
+      <div class="signup-form">
+        <div class="tabs">
+          <ul>
+            <li class="tab"><a onclick="switchLogin(event,'login')">Login</a></li>
+            <li class="is-active tab"><a onclick="switchLogin(event,'sign-up')">Sign Up</a></li>
+          </ul>
         </div>
-        <div id="sign-up" class="content-tab" style="display:none">
+        <div class="container section">
           <form>
-            <div class="field">
-              <label class="label">First Name</label>
-              <div class="control">
-                <input class="input" type="text" placeholder="Enter First Name">
+            <div id="login" class="content-tab">
+              <div class="field">
+                <label class="label">Email</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Enter Email">
+                </div>
+                <p class="help">Enter Email</p>
               </div>
-              <p class="help">Enter First Name</p>
-            </div>
-            <div class="field">
-              <label class="label">Last Name</label>
-              <div class="control">
-                <input class="input" type="text" placeholder="Enter Last Name">
+              <div class="field">
+                <label class="label">Password</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Enter Password">
+                </div>
+                <p class="help">Enter Password</p>
               </div>
-              <p class="help">Enter Last Name</p>
-            </div>
-            <div class="field">
-              <label class="label">Business Name</label>
-              <div class="control">
-                <input class="input" type="text" placeholder="Enter Business Name">
+              <button class="button is-primary">Login</button>
+          </form>
+        </div>
+        <div class="container section">
+          <form>
+            <div id="sign-up" class="content-tab" style="display:none">
+              <div class="field">
+                <label class="label">First Name</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Enter First Name">
+                </div>
+                <p class="help">Enter First Name</p>
               </div>
-              <p class="help">Enter Business Name</p>
-            </div>
-            <div class="field">
-              <label class="label">Email</label>
-              <div class="control">
-                <input class="input" type="text" placeholder="Enter Email">
+              <div class="field">
+                <label class="label">Last Name</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Enter Last Name">
+                </div>
+                <p class="help">Enter Last Name</p>
               </div>
-              <p class="help">Enter Email</p>
-            </div>
-            <div class="field">
-              <label class="label">Password</label>
-              <div class="control">
-                <input class="input" type="text" placeholder="Enter Password">
+              <div class="field">
+                <label class="label">Business Name</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Enter Business Name">
+                </div>
+                <p class="help">Enter Business Name</p>
               </div>
-              <p class="help">Enter Password</p>
+              <div class="field">
+                <label class="label">Email</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Enter Email">
+                </div>
+                <p class="help">Enter Email</p>
+              </div>
+              <div class="field">
+                <label class="label">Password</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Enter Password">
+                </div>
+                <p class="help">Enter Password</p>
+              </div>
+              <button class="button is-primary">Sign Up</button>
             </div>
-            <button class="button is-primary">Sign Up</button>
           </form>
         </div>
       </div>
