@@ -53,6 +53,14 @@ h1 {
    margin-bottom: 2rem;
  }
 
+ #sign-out {
+   display: none;
+ }
+
+ #my-account {
+   display: none;
+ }
+
 /************************************************
    MAIN                                     @main
 

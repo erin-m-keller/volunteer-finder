@@ -1,3 +1,5 @@
+let user;
+
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -34,6 +36,7 @@ function loadFirebase() {
           ); // Get the user password input
 
           const signOutBtn = document.getElementById("sign-out"); // Get the sign-out button
+          const myAccountBtn = document.getElementById("my-account"); // Get the my-account button
           const signInBtnGoogle = document.getElementById("sign-in-google"); // Get the sign-in with Google button
 
           signUpForm.addEventListener("submit", (e) => {
@@ -46,7 +49,7 @@ function loadFirebase() {
             fireAuth
               .createUserWithEmailAndPassword(auth, email, password)
               .then((userCredential) => {
-                const user = userCredential.user;
+                user = userCredential.user;
                 console.log(user);
                 signOutBtn.style.display = "block"; // Show the sign-out button
               })
@@ -66,7 +69,7 @@ function loadFirebase() {
             fireAuth
               .signInWithEmailAndPassword(auth, email, password)
               .then((userCredential) => {
-                const user = userCredential.user;
+                user = userCredential.user;
 
                 console.log(user);
                 signOutBtn.style.display = "block"; // Show the sign-out button
@@ -86,7 +89,7 @@ function loadFirebase() {
               .signInWithPopup(auth, provider)
               .then((result) => {
                 // Sign in with the Google provider object
-                const user = result.user; // Get the signed-in user from the result
+                user = result.user; // Get the signed-in user from the result
 
                 console.log(user);
                 signOutBtn.style.display = "block"; // Show the sign-out button
@@ -103,7 +106,10 @@ function loadFirebase() {
             fireAuth.signOut(auth).then(() => {
               // Sign out
               console.log("User signed out");
+              user = null;
               signOutBtn.style.display = "none"; // Hide the sign-out button
+              myAccountBtn.style.display = "none"; // Hide the my-account button
+              location.replace("index.html");
             });
           });
         }
