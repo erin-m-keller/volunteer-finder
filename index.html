@@ -38,10 +38,11 @@
             </div>
             <button id="sign-in" type="submit" class="button is-primary">Login</button>
             <button id="sign-in-google" class="button is-primary">Sign in with Google</button>
+            <button id="sign-out" class="button is-primary">Sign out</button>
         </form>
         </div>
         <div id="sign-up" class="content-tab" style="display:none">
-          <form>
+          <form id="sign-up-form">
             <div class="field">
               <label class="label">First Name</label>
               <div class="control">
@@ -66,20 +67,18 @@
             <div class="field">
               <label class="label">Email</label>
               <div class="control">
-                <input class="input" type="text" placeholder="Enter Email">
+                <input id="sign-up-user-email" class="input" type="text" placeholder="Enter Email">
               </div>
               <p class="help">Enter Email</p>
             </div>
             <div class="field">
               <label class="label">Password</label>
               <div class="control">
-                <input class="input" type="password" placeholder="Enter Password">
+                <input id="sign-up-user-password" class="input" type="password" placeholder="Enter Password">
               </div>
               <p class="help">Enter Password</p>
             </div>
             <button class="button is-primary">Sign Up</button>
-            <button id="sign-in-google">Sign in with Google</button>
-            <button id="sign-out">Sign out</button>
           </form>
         </div>
       </div>
