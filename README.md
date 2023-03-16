@@ -26,13 +26,22 @@
 ## User Story
 
 ```md
-Add user story here once application plan is finalized
+AS A business owner
+I WANT to see available volunteers in my area
+SO THAT I can plan a volunteer project
 ```
 
 ## Acceptance Criteria
 
 ```md
-Add acceptance criteria here once application plan is finalized
+GIVEN when I access the page I am presented with a login/sign-up form
+GIVEN an account has been created
+WHEN I sign-in/sign-up to the website
+THEN I view the main dashboard
+WHEN I view the dashboard
+THEN I am presented with a list of available volunteers
+WHEN I click the volunteer
+THEN I am presented with their information (avatar, name, city/state, phone/email) and a map with their location and a link to contact the volunteer
 ```
 
 ## Project Requirements
