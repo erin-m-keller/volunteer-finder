@@ -46,7 +46,14 @@ p {
 
    The styles for the header
 ************************************************/
-
+h1 {
+   font-family: 'Poiret One', cursive;
+   font-size: 3rem !important;
+   font-weight: 700;
+   text-align: center;
+   margin-top: 2rem;
+   margin-bottom: 2rem;
+ }
 /************************************************
    MAIN                                     @main
 
