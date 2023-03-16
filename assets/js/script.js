@@ -1,17 +1,3 @@
-// Initialize global variables
-let preferredUsers = [];
-let savedPreferredUsers = [];
-
-/**
- * @init
- * Runs on page load
- */
-function init() {
-  // this will return and array of obj's
-  retriveUsers(10);   
-}
-init();
-
 /**
  * @toggleLogin
  * Allows the user to toggle between the
@@ -30,45 +16,4 @@ function toggleLogin (elemId) {
     // switch the is-active class on the tabs based on contentElem.id
     dataTarget.classList[contentElem.id === elemId ? 'add' : 'remove']('is-active');
   }
-}
-
-function retriveUsers(numHowManyUsersYouWant){
-    let requestUrl = `https://random-data-api.com/api/v2/users?size=${numHowManyUsersYouWant}&response_type=json`;
-
-    fetch(requestUrl)
-      .then(function(response){
-        return response.json();
-      })
-      .then(function(data){
-        //do some thing with your data
-        //maybe give it a card
-        let currentUser;
-        for (let index = 0; index < data.length; index++) {
-            
-        }
-      });
-
-
-}
-
-function loadPreferredUsers(){
-
-try {
-    savedPreferredUsers = JSON.parse(localStorage.getItem('SomethingWeDecideOn'));
-} catch (error) {
-    
-}
-
-}
-
-function savePreferredUsers(userObj){
-
-    try {
-        preferredUsers = JSON.parse(localStorage.getItem('SomethingWeDecideOn'));
-    } catch (error) {
-        
-    }  
-    
-    localStorage.setItem()
-
 }
