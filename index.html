@@ -20,23 +20,24 @@
         </ul>
       </div>
       <div class="container section">
-        <form>
+        <form id="sign-in-form">
           <div id="login" class="content-tab">
             <div class="field">
               <label class="label">Email</label>
               <div class="control">
-                <input class="input" type="text" placeholder="Enter Email">
+                <input id="sign-in-user-email" class="input" type="text" placeholder="Enter Email">
               </div>
               <p class="help">Enter Email</p>
             </div>
             <div class="field">
               <label class="label">Password</label>
               <div class="control">
-                <input class="input" type="text" placeholder="Enter Password">
+                <input id="sign-in-user-password" class="input" type="password" placeholder="Enter Password">
               </div>
               <p class="help">Enter Password</p>
             </div>
-            <button class="button is-primary">Login</button>
+            <button id="sign-in" type="submit" class="button is-primary">Login</button>
+            <button id="sign-in-google" class="button is-primary">Sign in with Google</button>
         </form>
         </div>
         <div id="sign-up" class="content-tab" style="display:none">
@@ -72,11 +73,13 @@
             <div class="field">
               <label class="label">Password</label>
               <div class="control">
-                <input class="input" type="text" placeholder="Enter Password">
+                <input class="input" type="password" placeholder="Enter Password">
               </div>
               <p class="help">Enter Password</p>
             </div>
             <button class="button is-primary">Sign Up</button>
+            <button id="sign-in-google">Sign in with Google</button>
+            <button id="sign-out">Sign out</button>
           </form>
         </div>
       </div>
@@ -84,6 +87,7 @@
     <footer class="footer">
       <h3>&copy; 2023</h3>
     </footer>
+    <script src="./assets/js/auth.js"></script>
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
