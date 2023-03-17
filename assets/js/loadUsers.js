@@ -5,10 +5,21 @@ let savedPreferredUsers = [];
 function init() {
     
     // this will return and array of obj's
-    retriveUsers(12);
+    retriveUsers(12); // this will return and array of obj's
+    getUserFromLocalStorage(); // Get the user object from local storage
     
 
 
+}
+
+function getUserFromLocalStorage() {
+  // Get the user object from local storage
+  const userString = localStorage.getItem("user"); // Get the user object from local storage
+  if (userString) {
+    user = JSON.parse(userString); // Parse the user object
+  } else {
+    location.href = "index.html"; // Redirect to the list users page
+  }
 }
 
 function retriveUsers(numHowManyUsersYouWant){
