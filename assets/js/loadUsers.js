@@ -1,15 +1,35 @@
 /* Logic goes here */
 let preferredUsers = [];
 let savedPreferredUsers = [];
+let user;
+const signOutBtn = document.getElementById("sign-out"); // Get the sign-out button
+const myAccountBtn = document.getElementById("my-account"); // Get the my-account button
 
 function init() {
     
     // this will return and array of obj's
-    retriveUsers(12);
+    retriveUsers(12); // this will return and array of obj's
+    getUserFromLocalStorage(); // Get the user object from local storage
     
 
 
 }
+
+function getUserFromLocalStorage() {
+  // Get the user object from local storage
+  const userString = localStorage.getItem("user"); // Get the user object from local storage
+  if (userString) {
+    user = JSON.parse(userString); // Parse the user object
+    signOutBtn.style.display = "block"; // Show the sign-out button
+  } else {
+    location.href = "index.html"; // Redirect to the list users page
+  }
+}
+
+signOutBtn.addEventListener("click", () => {
+  // Add a click event listener to the sign-out button
+  location.replace("index.html"); // Redirect to the home page
+});
 
 function retriveUsers(numHowManyUsersYouWant){
     let requestUrl = `https://random-data-api.com/api/v2/users?size=${numHowManyUsersYouWant}&response_type=json`;
@@ -50,6 +70,8 @@ function createUserCard(cardData){
 
     let card = document.createElement('div');
     card.classList.add('card');
+    card.dataset.lat = cardData.address.coordinates.lat;
+    card.dataset.lng = cardData.address.coordinates.lng;
 
     let cardContent = document.createElement('div');
     cardContent.classList.add('card-content');
@@ -87,6 +109,9 @@ function createUserCard(cardData){
     content.textContent = ` ${cardData.address.city}, ${cardData.address.state} - Phone: ${cardData.phone_number}`
     //avatar: ${cardData.avatar}
     //avatar,  city/state, phone/
+
+    
+
 
     mediaContent.append(title);
     mediaContent.append(subtitle);
