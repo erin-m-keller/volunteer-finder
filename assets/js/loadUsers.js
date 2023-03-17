@@ -1,6 +1,9 @@
 /* Logic goes here */
 let preferredUsers = [];
 let savedPreferredUsers = [];
+let user;
+const signOutBtn = document.getElementById("sign-out"); // Get the sign-out button
+const myAccountBtn = document.getElementById("my-account"); // Get the my-account button
 
 function init() {
     
@@ -17,6 +20,7 @@ function getUserFromLocalStorage() {
   const userString = localStorage.getItem("user"); // Get the user object from local storage
   if (userString) {
     user = JSON.parse(userString); // Parse the user object
+    signOutBtn.style.display = "block"; // Show the sign-out button
   } else {
     location.href = "index.html"; // Redirect to the list users page
   }
