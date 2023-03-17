@@ -62,10 +62,10 @@ function createUserCard(cardData){
 
     let figure = document.createElement('figure');
     figure.classList.add('image');
-    figure.classList.add('is-48x48');
+    figure.classList.add('is-300x300');
 
     let img = document.createElement('img');
-    img.src = 'https://bulma.io/images/placeholders/96x96.png';
+    img.src = cardData.avatar;
     img.alt = 'Placeholder image';
 
     let mediaContent = document.createElement('div');
@@ -79,11 +79,15 @@ function createUserCard(cardData){
     let subtitle = document.createElement('p');
     subtitle.classList.add('subtitle');
     subtitle.classList.add('is-6');
+    subtitle.classList.add('a')
     subtitle.textContent = `${cardData.email}`;
+    subtitle.href=`mailto:${cardData.email}`;
 
     let content = document.createElement('div');
     content.classList.add('content');
-    content.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+    content.textContent = ` City: ${cardData.address.city} State: ${cardData.address.state} Phone: ${cardData.phone_number}`
+    //avatar: ${cardData.avatar}
+    //avatar,  city/state, phone/
 
     mediaContent.append(title);
     mediaContent.append(subtitle);
