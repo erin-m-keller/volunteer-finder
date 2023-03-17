@@ -26,6 +26,11 @@ function getUserFromLocalStorage() {
   }
 }
 
+signOutBtn.addEventListener("click", () => {
+  // Add a click event listener to the sign-out button
+  location.replace("index.html"); // Redirect to the home page
+});
+
 function retriveUsers(numHowManyUsersYouWant){
     let requestUrl = `https://random-data-api.com/api/v2/users?size=${numHowManyUsersYouWant}&response_type=json`;
 
