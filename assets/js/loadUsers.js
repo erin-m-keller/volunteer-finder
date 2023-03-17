@@ -5,7 +5,7 @@ let savedPreferredUsers = [];
 function init() {
     
     // this will return and array of obj's
-    retriveUsers(50);
+    retriveUsers(12);
     
 
 
@@ -73,19 +73,18 @@ function createUserCard(cardData){
 
     let title = document.createElement('p');
     title.classList.add('title');
-    title.classList.add('is-4');
+    title.classList.add('is-2');
     title.textContent = `${cardData.first_name} ${cardData.last_name}`;
 
     let subtitle = document.createElement('p');
     subtitle.classList.add('subtitle');
-    subtitle.classList.add('is-6');
-    subtitle.classList.add('a')
+    subtitle.classList.add('is-4');    
     subtitle.textContent = `${cardData.email}`;
-    subtitle.href=`mailto:${cardData.email}`;
+    //subtitle.href=`mailto:${cardData.email}`;
 
     let content = document.createElement('div');
     content.classList.add('content');
-    content.textContent = ` City: ${cardData.address.city} State: ${cardData.address.state} Phone: ${cardData.phone_number}`
+    content.textContent = ` ${cardData.address.city}, ${cardData.address.state} - Phone: ${cardData.phone_number}`
     //avatar: ${cardData.avatar}
     //avatar,  city/state, phone/
 
