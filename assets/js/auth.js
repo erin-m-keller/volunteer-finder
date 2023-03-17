@@ -157,6 +157,7 @@ function loadFirebase() {
                   photo: userData.photoURL, // Get the user's photo
                   businessName: "", // Get the user's business name
                   uid: userData.uid, // Get the user's uid
+                  savedVolunteers: [], // Get the user's volunteer array
                 };
 
                 setUserToLocalStorage(); // Set the user object to local storage
