@@ -23,12 +23,14 @@ function getUserFromLocalStorage() {
   const userString = localStorage.getItem("user"); // Get the user object from local storage
   if (userString) {
     user = JSON.parse(userString); // Parse the user object
+    return true;
   }
+  return false;
 }
 
 function setUserToLocalStorage() {
   // Set the user object to local storage
-  localStorage.setItem("user", JSON.stringify(user)); // Stringify the user object
+  localStorage.setItem("user", JSON.stringify(user)); // Stringify the user object and set it to local storage
 }
 
 function loadFirebase() {
@@ -86,7 +88,6 @@ function loadFirebase() {
 
                 setUserToLocalStorage(); // Set the user object to local storage
 
-                console.log(user);
                 signOutBtn.style.display = "block"; // Show the sign-out button
               })
               .catch((error) => {
@@ -112,8 +113,22 @@ function loadFirebase() {
                 const userFromStorage = getUserFromLocalStorage(); // Get the user object from local storage
 
                 if (userFromStorage) {
-                  user = userFromStorage;
-                  user.uid = userData.uid;
+                  user = userFromStorage; // Set the user object to the user object from local storage
+                  if (user.uid === userData.uid) {
+                    location.href = "listUsersTesting.html"; // Redirect to the list users page
+                  } else {
+                    user = {
+                      // Create a user object
+                      name: "", // Set the user's name
+                      email: userData.email, // Get the user's email
+                      photo: "", // Get the user's photo
+                      businessName: "", // Get the user's business name
+                      uid: userData.uid, // Get the user's uid
+                      savedVolunteers: [], // Get the user's volunteer array
+                    };
+
+                    setUserToLocalStorage(); // Set the user object to local storage
+                  }
                 } else {
                   user = {
                     // Create a user object
@@ -124,12 +139,12 @@ function loadFirebase() {
                     uid: userData.uid, // Get the user's uid
                     savedVolunteers: [], // Get the user's volunteer array
                   };
+
+                  setUserToLocalStorage(); // Set the user object to local storage
                 }
 
-                setUserToLocalStorage(); // Set the user object to local storage
                 location.href = "listUsersTesting.html"; // Redirect to the list users page
 
-                console.log(user);
                 signOutBtn.style.display = "block"; // Show the sign-out button
               })
               .catch((error) => {
@@ -150,20 +165,41 @@ function loadFirebase() {
                 // Sign in with the Google provider object
                 const userData = result.user; // Get the signed-in user from the result
 
-                const user = {
-                  // Create a user object
-                  name: userData.displayName, // Get the user's name
-                  email: userData.email, // Get the user's email
-                  photo: userData.photoURL, // Get the user's photo
-                  businessName: "", // Get the user's business name
-                  uid: userData.uid, // Get the user's uid
-                  savedVolunteers: [], // Get the user's volunteer array
-                };
+                const userFromStorage = getUserFromLocalStorage(); // Get the user object from local storage
+                console.log("userFromStorage", userFromStorage);
+                if (userFromStorage) {
+                  user = userFromStorage;
+                  if (user.uid === userData.uid) {
+                    location.href = "listUsersTesting.html"; // Redirect to the list users page
+                  } else {
+                    user = {
+                      // Create a user object
+                      name: userData.displayName, // Get the user's name
+                      email: userData.email, // Get the user's email
+                      photo: userData.photoURL, // Get the user's photo
+                      businessName: "", // Get the user's business name
+                      uid: userData.uid, // Get the user's uid
+                      savedVolunteers: [], // Get the user's volunteer array
+                    };
 
-                setUserToLocalStorage(); // Set the user object to local storage
+                    setUserToLocalStorage(); // Set the user object to local storage
+                  }
+                } else {
+                  user = {
+                    // Create a user object
+                    name: userData.displayName, // Get the user's name
+                    email: userData.email, // Get the user's email
+                    photo: userData.photoURL, // Get the user's photo
+                    businessName: "", // Get the user's business name
+                    uid: userData.uid, // Get the user's uid
+                    savedVolunteers: [], // Get the user's volunteer array
+                  };
+
+                  setUserToLocalStorage(); // Set the user object to local storage
+                }
+
                 location.href = "listUsersTesting.html"; // Redirect to the list users page
 
-                console.log(user);
                 signOutBtn.style.display = "block"; // Show the sign-out button
               })
               .catch((error) => {
