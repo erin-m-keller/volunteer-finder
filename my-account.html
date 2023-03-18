@@ -14,37 +14,93 @@
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico" />
   </head>
   <body>
-    
     <header>
       <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <a class="navbar-item" href="./">
             <i class="fa-solid fa-hand-holding-heart"></i>&nbsp;&nbsp;MAVP
           </a>
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" onclick="toggleMobileMenu()" id="burger-btn">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
           </a>
         </div>
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="buttons">
-              <a href="./my-account.html" id="my-account" class="button is-primary">
-                <strong>My Account</strong>
-              </a>
-              <a id="sign-out" class="button is-primary">
-                <strong>Sign Out</strong>
-              </a>
+        <div id="nav-menu" class="navbar-menu">
+          <div class="navbar-start">
+            <a href="./listUsersTesting.html" class="navbar-item">
+              Volunteers List
+            </a>
+            <a href="./my-account.html" class="navbar-item">
+              My Account
+            </a>
+          </div>
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a id="sign-out" class="button is-primary">
+                  <strong>Sign Out</strong>
+                </a>
+              </div>
             </div>
           </div>
-        
+        </div>
       </nav>
     </header>
-    <main></main>
-    <footer
-      class="footer has-text-centered is-flex-align-items-flex-end mt-auto"
-    >
+    <main>
+      <h1>Edit Profile</h1>
+      <div class="modal" id="confirm-modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+          <div class="box">
+            <h2>Are you sure you want to make these changes?</h2>
+            <button class="button is-danger" onclick="closeConfirmModal()">Cancel</button>
+            <button class="button is-primary" onclick="updateUserProfile()">Submit</button>
+          </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close" onclick="closeConfirmModal()"></button>
+      </div>
+      <div class="user-form">
+        <img src="" id="user-image" />
+        <div class="field">
+          <label class="label">Name</label>
+          <div class="control has-icons-left has-icons-right">
+            <input class="input" type="text" placeholder="Name" id="user-name">
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control has-icons-left has-icons-right">
+            <input class="input" type="email" placeholder="Email" id="user-email">
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Business Name</label>
+          <div class="control has-icons-left has-icons-right">
+            <input class="input" type="email" placeholder="Business Name" id="user-business">
+            <span class="icon is-small is-left">
+              <i class="fas fa-building"></i>
+            </span>
+          </div>
+        </div>
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="button is-link" onclick="displayConfirmModal()">Update</button>
+          </div>
+        </div>
+        <div class="notification is-primary" id="success-msg">
+          <button class="delete" onclick="closeMsg()"></button>
+          Successfully updated.
+        </div>
+      </div>
+    </main>
+    <footer class="footer has-text-centered is-flex-align-items-flex-end mt-auto">
       <h3>&copy; 2023</h3>
     </footer>
     <script src="./assets/js/script.js"></script>

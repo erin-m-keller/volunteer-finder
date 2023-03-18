@@ -35,8 +35,14 @@ main {
    min-height: 100vh;
    background-color: #f5f5f5;
 }
+h1,
+h2,
 p {
   font-family: var(--font-main-style);
+}
+h2 {
+   font-size: 1.4em !important;
+   margin-bottom: 1em !important;
 }
 
 /************************************************
@@ -53,14 +59,6 @@ h1 {
    margin-bottom: 2rem;
  }
 
- #sign-out {
-   display: none;
- }
-
- #my-account {
-   display: none;
- }
-
 /************************************************
    MAIN                                     @main
 
@@ -71,15 +69,24 @@ h1 {
    padding: 1em;
    background-color: #FFF;
 }
-.signup-form {
+.signup-form,
+.user-form {
    padding: 1em;
    margin: 1em auto;
    width: 90%;
    background-color: #FFF;
 }
-
+#user-image {
+   border-radius: 50%;
+   margin: 1em auto;
+   width: 5em;
+}
+#success-msg {
+   display: none;
+}
 @media screen and (min-width: 700px) {
-   .signup-form {
+   .signup-form,
+   .user-form {
       width: 50%;
       max-width: 1200px;
    }

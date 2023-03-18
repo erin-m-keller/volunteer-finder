@@ -18,24 +18,31 @@
           <a class="navbar-item" href="./">
             <i class="fa-solid fa-hand-holding-heart"></i>&nbsp;&nbsp;MAVP
           </a>
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" onclick="toggleMobileMenu()" id="burger-btn">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
           </a>
         </div>
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="buttons">
-              <a id="my-account" href="./my-account.html" id="my-account" class="button is-primary">
-                <strong>My Account</strong>
-              </a>
-              <a id="sign-out" class="button is-primary">
-                <strong>Sign Out</strong>
-              </a>
+        <div id="nav-menu" class="navbar-menu">
+          <div class="navbar-start">
+            <a href="./listUsersTesting.html" class="navbar-item">
+              Volunteers List
+            </a>
+            <a href="./my-account.html" class="navbar-item">
+              My Account
+            </a>
+          </div>
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a id="sign-out" class="button is-primary">
+                  <strong>Sign Out</strong>
+                </a>
+              </div>
             </div>
           </div>
-        
+        </div>
       </nav>
     </header>
     <main>
@@ -65,9 +72,11 @@
               </div> -->
         </div>     
     </main>
-    <footer class="footer">
+    <footer class="footer has-text-centered is-flex-align-items-flex-end mt-auto">
       <h3>&copy; 2023</h3>
     </footer>
     <script src="./assets/js/loadUsers.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/fontawesome.min.js"></script>
   </body>
 </html>
