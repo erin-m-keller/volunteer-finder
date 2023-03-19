@@ -6,13 +6,9 @@ const signOutBtn = document.getElementById("sign-out"); // Get the sign-out butt
 const myAccountBtn = document.getElementById("my-account"); // Get the my-account button
 
 function init() {
-    
-    // this will return and array of obj's
-    retriveUsers(12); // this will return and array of obj's
-    getUserFromLocalStorage(); // Get the user object from local storage
-    
-
-
+  // this will return and array of obj's
+  retriveUsers(12); // this will return and array of obj's
+  getUserFromLocalStorage(); // Get the user object from local storage
 }
 
 function getUserFromLocalStorage() {
@@ -31,112 +27,103 @@ signOutBtn.addEventListener("click", () => {
   location.replace("index.html"); // Redirect to the home page
 });
 
-function retriveUsers(numHowManyUsersYouWant){
-    let requestUrl = `https://random-data-api.com/api/v2/users?size=${numHowManyUsersYouWant}&response_type=json`;
+function retriveUsers(numHowManyUsersYouWant) {
+  let requestUrl = `https://random-data-api.com/api/v2/users?size=${numHowManyUsersYouWant}&response_type=json`;
 
-    fetch(requestUrl)
-      .then(function(response){
-        return response.json();
-      })
-      .then(function(data){
-        //do some thing with your data
-        //maybe give it a card
-        
-        for (let index = 0; index < data.length; index++) {
-            
-          //appendChild form the methond that has the card
-          document.querySelector('.container').append(createUserCard(data[index]));
-          // let currentUser = createUserCard(data[index]);
-          
-          
+  fetch(requestUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      //do some thing with your data
+      //maybe give it a card
 
-        }
-      });
-
-
+      for (let index = 0; index < data.length; index++) {
+        //appendChild form the methond that has the card
+        document
+          .querySelector(".container")
+          .append(createUserCard(data[index]));
+        // let currentUser = createUserCard(data[index]);
+      }
+    });
 }
 
-function loadPreferredUsers(){
-
-try {
-    savedPreferredUsers = JSON.parse(localStorage.getItem('SomethingWeDecideOn'));
-} catch (error) {
-    
+function loadPreferredUsers() {
+  try {
+    savedPreferredUsers = JSON.parse(
+      localStorage.getItem("SomethingWeDecideOn")
+    );
+  } catch (error) {}
 }
 
+function createUserCard(cardData) {
+  let card = document.createElement("div");
+  card.classList.add("card");
+  card.dataset.lat = cardData.address.coordinates.lat;
+  card.dataset.lng = cardData.address.coordinates.lng;
+
+  let cardContent = document.createElement("div");
+  cardContent.classList.add("card-content");
+
+  let media = document.createElement("div");
+  media.classList.add("media");
+
+  let mediaLeft = document.createElement("div");
+  mediaLeft.classList.add("media-left");
+
+  let figure = document.createElement("figure");
+  figure.classList.add("image");
+  figure.classList.add("is-300x300");
+
+  let img = document.createElement("img");
+  img.src = cardData.avatar;
+  img.alt = "Placeholder image";
+
+  let mediaContent = document.createElement("div");
+  mediaContent.classList.add("media-content");
+
+  let title = document.createElement("p");
+  title.classList.add("title");
+  title.classList.add("is-2");
+  title.textContent = `${cardData.first_name} ${cardData.last_name}`;
+
+  let subtitle = document.createElement("p");
+  subtitle.classList.add("subtitle");
+  subtitle.classList.add("is-4");
+  subtitle.textContent = `${cardData.email}`;
+  //subtitle.href=`mailto:${cardData.email}`;
+
+  let content = document.createElement("div");
+  content.classList.add("content");
+  content.textContent = ` ${cardData.address.city}, ${cardData.address.state} - Phone: ${cardData.phone_number}`;
+  //avatar: ${cardData.avatar}
+  //avatar,  city/state, phone/
+
+  let button = document.createElement("button");
+  button.classList.add("button");
+  button.classList.add("is-primary");
+  button.textContent = "More Info";
+  button.addEventListener("click", function () {
+    moreDetails(cardData);
+  });
+
+  mediaContent.append(title);
+  mediaContent.append(subtitle);
+  figure.append(img);
+  mediaLeft.append(figure);
+  media.append(mediaLeft);
+  media.append(mediaContent);
+  cardContent.append(media);
+  cardContent.append(content);
+  cardContent.append(button);
+  card.append(cardContent);
+
+  return card;
 }
 
-function createUserCard(cardData){
-
-    let card = document.createElement('div');
-    card.classList.add('card');
-    card.dataset.lat = cardData.address.coordinates.lat;
-    card.dataset.lng = cardData.address.coordinates.lng;
-
-    let cardContent = document.createElement('div');
-    cardContent.classList.add('card-content');
-
-    let media = document.createElement('div');
-    media.classList.add('media');
-
-    let mediaLeft = document.createElement('div');
-    mediaLeft.classList.add('media-left');
-
-    let figure = document.createElement('figure');
-    figure.classList.add('image');
-    figure.classList.add('is-300x300');
-
-    let img = document.createElement('img');
-    img.src = cardData.avatar;
-    img.alt = 'Placeholder image';
-
-    let mediaContent = document.createElement('div');
-    mediaContent.classList.add('media-content');
-
-    let title = document.createElement('p');
-    title.classList.add('title');
-    title.classList.add('is-2');
-    title.textContent = `${cardData.first_name} ${cardData.last_name}`;
-
-    let subtitle = document.createElement('p');
-    subtitle.classList.add('subtitle');
-    subtitle.classList.add('is-4');    
-    subtitle.textContent = `${cardData.email}`;
-    //subtitle.href=`mailto:${cardData.email}`;
-
-    let content = document.createElement('div');
-    content.classList.add('content');
-    content.textContent = ` ${cardData.address.city}, ${cardData.address.state} - Phone: ${cardData.phone_number}`
-    //avatar: ${cardData.avatar}
-    //avatar,  city/state, phone/
-
-    
-
-
-    mediaContent.append(title);
-    mediaContent.append(subtitle);
-    figure.append(img);
-    mediaLeft.append(figure);
-    media.append(mediaLeft);
-    media.append(mediaContent);
-    cardContent.append(media);
-    cardContent.append(content);
-    card.append(cardContent);
-
-    return card;
-}
-
-
-function savePreferredUsers(userObj){
-
-    try {
-        preferredUsers = JSON.parse(localStorage.getItem('SomethingWeDecideOn'));
-    } catch (error) {
-        
-    }  
-    
-    localStorage.setItem()
-
+function moreDetails(cardData) {
+  localStorage.setItem("more-detail", JSON.stringify(cardData));
+  location.href = "more-detail.html";
 }
 
 init();
