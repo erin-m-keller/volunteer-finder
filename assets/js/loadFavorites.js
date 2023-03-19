@@ -91,9 +91,19 @@ function createUserCard(cardData) {
   let button = document.createElement("button");
   button.classList.add("button");
   button.classList.add("is-primary");
+  button.classList.add("details-btn");
   button.textContent = "Add to Favorites";
   button.addEventListener("click", function () {
     savePreferredUsers(cardData);
+  });
+
+  let backBtn = document.createElement("button");
+  backBtn.classList.add("button");
+  backBtn.classList.add("is-link");
+  backBtn.classList.add("details-btn");
+  backBtn.textContent = "< Go Back";
+  backBtn.addEventListener("click", function () {
+    history.go(-1);
   });
 
   mediaContent.append(title);
@@ -104,6 +114,7 @@ function createUserCard(cardData) {
   media.append(mediaContent);
   cardContent.append(media);
   cardContent.append(content);
+  cardContent.append(backBtn);
   cardContent.append(button);
   card.append(cardContent);
 
@@ -111,14 +122,37 @@ function createUserCard(cardData) {
 }
 
 function savePreferredUsers() {
+  let arr = [],
+      userArr = JSON.parse(localStorage.getItem('preferredUsers'));
+  if(!userArr) {
+      arr.push(JSON.parse(userObj));
+      localStorage.setItem('preferredUsers', JSON.stringify(arr));
+  } else {
+      userArr.push(JSON.parse(userObj));
+      localStorage.setItem('preferredUsers', JSON.stringify(userArr));
+  }
   loadPreferredUsers();
-  preferredUsers.push(JSON.parse(userObj));
-  localStorage.setItem("preferredUsers", JSON.stringify(preferredUsers));
   let notification = document.createElement("div");
   notification.classList.add("notification");
   notification.classList.add("is-primary");
   notification.textContent = "User added to favorites";
   document.querySelector(".container").append(notification);
+}
+
+function toggleMobileMenu () {
+  let burgerBtn = document.getElementById("burger-btn"),
+      navMenu = document.getElementById("nav-menu");
+  if (burgerBtn.classList.contains("is-active")) {
+    burgerBtn.classList.remove("is-active");
+    navMenu.classList.remove("is-active");
+  } else {
+    burgerBtn.classList.add("is-active");
+    navMenu.classList.add("is-active");
+  }
+}
+
+function returnToLastPage () {
+  window.location.href = window.history.back(1);
 }
 
 init();

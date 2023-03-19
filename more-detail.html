@@ -16,23 +16,12 @@
   </head>
   <body>
     <header>
-      <nav
-        class="navbar is-dark"
-        role="navigation"
-        aria-label="main navigation"
-      >
+      <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-          <a class="navbar-item" href="./">
+          <a class="navbar-item" href="javascript:void(0)">
             <i class="fa-solid fa-hand-holding-heart"></i>&nbsp;&nbsp;MAVP
           </a>
-          <a
-            role="button"
-            class="navbar-burger"
-            aria-label="menu"
-            aria-expanded="false"
-            onclick="toggleMobileMenu()"
-            id="burger-btn"
-          >
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" onclick="toggleMobileMenu()" id="burger-btn">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -43,29 +32,16 @@
             <a href="./listUsersTesting.html" class="navbar-item">
               Volunteers List
             </a>
-            <a href="./my-account.html" class="navbar-item"> My Account </a>
+            <a href="./my-account.html" class="navbar-item">
+              My Account
+            </a>
           </div>
           <div class="navbar-end">
             <div class="navbar-item">
               <img src="" id="user-image" class="user" />
-              <input
-                class="input"
-                type="text"
-                style="display: none"
-                id="user-name"
-              />
-              <input
-                class="input"
-                type="email"
-                style="display: none"
-                id="user-email"
-              />
-              <input
-                class="input"
-                type="email"
-                style="display: none"
-                id="user-business"
-              />
+              <input class="input" type="text" style="display:none" id="user-name">
+              <input class="input" type="email" style="display:none" id="user-email">
+              <input class="input" type="email" style="display:none" id="user-business">
             </div>
             <div class="navbar-item">
               <div class="buttons">
@@ -79,6 +55,7 @@
       </nav>
     </header>
     <main>
+      <h1>Volunteer Details</h1>
       <div class="container section"></div>
     </main>
     <footer
@@ -87,7 +64,6 @@
       <h3>&copy; 2023</h3>
     </footer>
     <script src="./assets/js/loadFavorites.js"></script>
-    <script src="./assets/js/script.js"></script>
     <script src="./assets/js/fontawesome.min.js"></script>
   </body>
 </html>

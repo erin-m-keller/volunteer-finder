@@ -6,7 +6,8 @@
 function init () {
   // initialize variables
   let userObj = JSON.parse(localStorage.getItem("user")),
-      updatedUserObj = JSON.parse(localStorage.getItem("updatedUser"));
+      updatedUserObj = JSON.parse(localStorage.getItem("updatedUser")),
+      preferredVolunteers = JSON.parse(localStorage.getItem("preferredUsers"));
   // if the user has previously updated their data
   if (updatedUserObj) {
     buildUserProfile(updatedUserObj);
@@ -14,6 +15,12 @@ function init () {
   // else use login user object
   else {
     buildUserProfile(userObj);
+  }
+  // if the user has added preferred volunteers, load volunteers list
+  if (preferredVolunteers) {
+    loadVolunteers(preferredVolunteers);
+  } else {
+    document.getElementById("panel-msg").style.display = "block";
   }
 }
 
@@ -122,6 +129,54 @@ function updateUserProfile () {
   successMsg.style.display = "block";
   // close modal
   closeConfirmModal();
+}
+
+/**
+ * @loadVolunteers
+ * Load the user's preferred volunteers
+ */
+function loadVolunteers (preferredVolunteers) {
+  // initialize variables
+  let link,
+      volunteerList = preferredVolunteers,
+      mainWrapper = document.getElementById("volunteer-list");
+  // loop through list and create an anchor element of each volunteer
+  for (let i = 0; i < volunteerList.length; i++) {
+    let anchor = document.createElement('a'),
+        span = document.createElement('span'),
+        icon = document.createElement('i'),
+        firstName = volunteerList[i].first_name,
+        lastName = volunteerList[i].last_name;
+    link = document.createTextNode(firstName + " " + lastName);
+    // create the elements to append to the panel
+    anchor.className = "panel-block";
+    span.className = "panel-icon";
+    icon.className = "fas fa-circle-user";
+    anchor.appendChild(span);
+    anchor.appendChild(icon);
+    anchor.appendChild(link);
+    anchor.addEventListener("click", () => moreDetails(volunteerList[i]));
+    mainWrapper.appendChild(anchor);
+  }
+}
+
+/**
+ * @moreDetails
+ * Load more data about the selected volunteer
+ */
+function moreDetails(cardData) {
+  // set the user data to local storage
+  localStorage.setItem("more-detail", JSON.stringify(cardData));
+  // redirect to the more-detail page
+  location.href = "more-detail.html";
+}
+
+/**
+ * @signOut
+ * Redirects user to index.html
+ */
+function signOut () {
+  location.replace("index.html");
 }
 
 // runs on page load
