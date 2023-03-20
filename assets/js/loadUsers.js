@@ -29,8 +29,6 @@ function initMap () {
   }
 };
 
-window.initMap = initMap;
-
 function init() {
   retriveUsers(12); // this will return and array of obj's
   getUserFromLocalStorage(); // Get the user object from local storage
