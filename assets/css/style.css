@@ -5,7 +5,7 @@
 *   @date (2023)
 *
 *   1.) GENERAL ______________________ @general
-*   2.) HEADER _______________________ @header
+*   2.) HERO _________________________ @hero
 *   3.) MAIN _________________________ @main
 *   4.) FOOTER _______________________ @footer
 *
@@ -19,6 +19,7 @@
 ************************************************/
 :root {
    --font-main-style: "Poiret One", sans-serif; /* placeholder font */
+   --font-sub-style: "Poppins", sans-serif; /* placeholder font */
  }
  * {
     box-sizing: border-box;
@@ -35,50 +36,98 @@
     min-height: 100vh;
     background-color: #f5f5f5;
  }
+ p,
+ button,
+ label,
+ input,
+ .panel-block,
+ .content {
+   font-family: var(--font-sub-style) !important;
+ }
  h1,
  h2,
+ h3,
  .panel-heading {
    font-family: var(--font-main-style);
+ }
+ h1 {
+   font-size: 3rem !important;
+   font-weight: 700;
+   margin-top: 2rem;
+   margin-bottom: 2rem;
  }
  h2 {
     font-size: 1.4em !important;
     margin-bottom: 1em !important;
  }
+ @keyframes animatedGradient {
+	0% { background-position: 0% 50%; }
+	50% { background-position: 100% 50%; }
+	100% { background-position: 0% 50%; }
+}
  
  /************************************************
-    HEADER                                @header
+    HERO                                     @hero
  
-    The styles for the header
+    The styles for the hero banner
  ************************************************/
- h1 {
-    font-family: 'Poiret One', cursive;
-    font-size: 3rem !important;
-    font-weight: 700;
-    text-align: center;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-  }
+ .hero {
+   text-align: center;
+   padding: 1em;
+   background-color: #FFF;
+}
+.hero-img {
+   height: 16em;
+   color: #FFF;
+   display: flex;
+   align-items: center;
+   padding-left: 8em;
+}
+.hero-img.bg-1 {
+  background: url("../images/volunteers-list-header.png") top right no-repeat #262626;
+  background-size: contain;
+}
+.hero-img.bg-2 {
+  background: url("../images/more-details-header.png") top right no-repeat #262626;
+  background-size: contain;
+}
+.hero-img.bg-3 {
+  background: url("../images/my-account-header.png") top right no-repeat #262626;
+  background-size: contain;
+}
  
  /************************************************
     MAIN                                     @main
  
     The styles for the main content
  ************************************************/
- .hero {
-    text-align: center;
-    padding: 1em;
-    background-color: #FFF;
- }
  .signup-form {
    padding: 1em;
-   margin: 1em;
-   width: 100%;
+   margin: 5em auto;
+   width: 95%;
    background-color: #FFF;
  }
  .user-form {
-    margin: 1em;
+    margin: 0;
     width: 100%;
     background-color: #FFF;
+ }
+ .img-gradient {
+   width: 75%;
+   position: relative;
+   background: linear-gradient(to right, #23d160, #ffdd57, #ff3860);
+	background-size: 500% 500%;
+	animation: animatedGradient 5s ease infinite;
+   padding: 0.25em;
+   margin: 5em auto;
+   display: flex;
+   border-radius: 100%;
+ }
+ .img-gradient img {
+   object-fit: cover;
+   width: 100%;
+   height: 100%;
+   border-radius: 100%;
  }
  .user#user-image {
     border-radius: 50%;
@@ -111,10 +160,8 @@
    margin: 0 auto;
  }
  @media screen and (min-width: 1024px) {
-   .signup-form {
-      margin: 1em auto;
-      width: 50%;
-      max-width: 1200px;
+   .user-form {
+      margin: 1em;
    }
  }
  
