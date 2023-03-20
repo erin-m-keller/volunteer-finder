@@ -105,6 +105,11 @@
  #panel-msg {
     display: none;
  }
+ #map {
+   width: 90%;
+   height: 15em;
+   margin: 0 auto;
+ }
  @media screen and (min-width: 1024px) {
    .signup-form {
       margin: 1em auto;
