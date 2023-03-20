@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="./assets/css/bulma.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poiret+One:100,200,300,400,500,600,700,800,900">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900">
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
   </head>
   <body>
@@ -33,95 +34,104 @@
       <div class="hero">
         <h1>My Awesome Volunteer Portal</h1>
       </div>
-      <div class="signup-form">
-        <div class="tabs">
-          <ul>
-            <li class="is-active" data-target="login"><a onclick="toggleLogin('login')">Login</a></li>
-            <li data-target="sign-up"><a onclick="toggleLogin('sign-up')">Sign Up</a></li>
-          </ul>
+      <div class="columns is-desktop">
+        <div class="column">
+          <div class="img-gradient">
+            <img src="./assets/images/4.jpeg" alt="Five people overlapping their hands and holding up a plant in soil" />
+          </div>
         </div>
-        <div class="tab-content" id="login">
-          <form id="sign-in-form">
-            <div class="field">
-              <label class="label">Email</label>
-              <div class="control has-icons-left has-icons-right">
-                <input id="sign-in-user-email" class="input" type="text" placeholder="Enter Email">
-                <span class="icon is-small is-left">
-                  <i class="fa-solid fa-envelope"></i>
-                </span>
-              </div>
-              <p class="help">Enter Email</p>
+        <div class="column">
+          <div class="signup-form">
+            <div class="tabs">
+              <ul>
+                <li class="is-active" data-target="login"><a onclick="toggleLogin('login')">Login</a></li>
+                <li data-target="sign-up"><a onclick="toggleLogin('sign-up')">Sign Up</a></li>
+              </ul>
             </div>
-            <div class="field">
-              <label class="label">Password</label>
-              <div class="control has-icons-left has-icons-right">
-                <input id="sign-in-user-password" class="input" type="password" placeholder="Enter Password">
-                <span class="icon is-small is-left">
-                  <i class="fa-solid fa-lock"></i>
-                </span>
-              </div>
-              <p class="help">Enter Password</p>
-            </div>
-            <button id="sign-in" type="submit" class="button is-primary">Login</button>
-            <button id="sign-in-google" class="button is-primary">Sign in with Google</button>
-        </form>
-        </div>
-        <div class="tab-content" id="sign-up" style="display:none">
-          <form id="sign-up-form">
-            <div class="columns is-desktop">
-              <div class="field column">
-                <label class="label">First Name</label>
-                <div class="control has-icons-left has-icons-right">
-                  <input id="first-name" class="input" type="text" placeholder="Enter First Name">
-                  <span class="icon is-small is-left">
-                    <i class="fas fa-user"></i>
-                  </span>
+            <div class="tab-content" id="login">
+              <form id="sign-in-form">
+                <div class="field">
+                  <label class="label">Email</label>
+                  <div class="control has-icons-left has-icons-right">
+                    <input id="sign-in-user-email" class="input" type="text" placeholder="Enter Email" required> 
+                    <span class="icon is-small is-left">
+                      <i class="fa-solid fa-envelope"></i>
+                    </span>
+                  </div>
+                  <p class="help">Enter Email</p>
                 </div>
-                <p class="help">Enter First Name</p>
-              </div>
-              <div class="field column">
-                <label class="label">Last Name</label>
-                <div class="control has-icons-left has-icons-right">
-                  <input id="last-name" class="input" type="text" placeholder="Enter Last Name">
-                  <span class="icon is-small is-left">
-                    <i class="fas fa-user"></i>
-                  </span>
+                <div class="field">
+                  <label class="label">Password</label>
+                  <div class="control has-icons-left has-icons-right">
+                    <input id="sign-in-user-password" class="input" type="password" placeholder="Enter Password" required>
+                    <span class="icon is-small is-left">
+                      <i class="fa-solid fa-lock"></i>
+                    </span>
+                  </div>
+                  <p class="help">Enter Password</p>
                 </div>
-                <p class="help">Enter Last Name</p>
-              </div>
+                <button id="sign-in" type="submit" class="button is-primary">Login</button>
+                <button id="sign-in-google" class="button is-primary">Sign in with Google</button>
+            </form>
             </div>
-            <div class="field">
-              <label class="label">Business Name</label>
-              <div class="control has-icons-left has-icons-right">
-                <input id="business-name" class="input" type="text" placeholder="Enter Business Name">
-                <span class="icon is-small is-left">
-                  <i class="fas fa-building"></i>
-                </span>
-              </div>
-              <p class="help">Enter Business Name</p>
+            <div class="tab-content" id="sign-up" style="display:none">
+              <form id="sign-up-form">
+                <div class="columns is-desktop">
+                  <div class="field column">
+                    <label class="label">First Name</label>
+                    <div class="control has-icons-left has-icons-right">
+                      <input id="first-name" class="input" type="text" placeholder="Enter First Name" required>
+                      <span class="icon is-small is-left">
+                        <i class="fas fa-user"></i>
+                      </span>
+                    </div>
+                    <p class="help">Enter First Name</p>
+                  </div>
+                  <div class="field column">
+                    <label class="label">Last Name</label>
+                    <div class="control has-icons-left has-icons-right">
+                      <input id="last-name" class="input" type="text" placeholder="Enter Last Name" required>
+                      <span class="icon is-small is-left">
+                        <i class="fas fa-user"></i>
+                      </span>
+                    </div>
+                    <p class="help">Enter Last Name</p>
+                  </div>
+                </div>
+                <div class="field">
+                  <label class="label">Business Name</label>
+                  <div class="control has-icons-left has-icons-right">
+                    <input id="business-name" class="input" type="text" placeholder="Enter Business Name">
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-building"></i>
+                    </span>
+                  </div>
+                  <p class="help">Enter Business Name</p>
+                </div>
+                <div class="field">
+                  <label class="label">Email</label>
+                  <div class="control has-icons-left has-icons-right">
+                    <input id="sign-up-user-email" class="input" type="text" placeholder="Enter Email" required>
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-envelope"></i>
+                    </span>
+                  </div>
+                  <p class="help">Enter Email</p>
+                </div>
+                <div class="field">
+                  <label class="label">Password</label>
+                  <div class="control has-icons-left has-icons-right">
+                    <input id="sign-up-user-password" class="input" type="password" placeholder="Enter Password" required>
+                    <span class="icon is-small is-left">
+                      <i class="fa-solid fa-lock"></i>
+                    </span>
+                  </div>
+                  <p class="help">Enter Password</p>
+                </div>
+                <button class="button is-primary">Sign Up</button>
+              </form>
             </div>
-            <div class="field">
-              <label class="label">Email</label>
-              <div class="control has-icons-left has-icons-right">
-                <input id="sign-up-user-email" class="input" type="text" placeholder="Enter Email">
-                <span class="icon is-small is-left">
-                  <i class="fas fa-envelope"></i>
-                </span>
-              </div>
-              <p class="help">Enter Email</p>
-            </div>
-            <div class="field">
-              <label class="label">Password</label>
-              <div class="control has-icons-left has-icons-right">
-                <input id="sign-up-user-password" class="input" type="password" placeholder="Enter Password">
-                <span class="icon is-small is-left">
-                  <i class="fa-solid fa-lock"></i>
-                </span>
-              </div>
-              <p class="help">Enter Password</p>
-            </div>
-            <button class="button is-primary">Sign Up</button>
-          </form>
+          </div>
         </div>
       </div>
     </main>
