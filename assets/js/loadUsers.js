@@ -4,11 +4,33 @@ let savedPreferredUsers = [];
 let user;
 const signOutBtn = document.getElementById("sign-out"); // Get the sign-out button
 const myAccountBtn = document.getElementById("my-account"); // Get the my-account button
+// const mapDiv = document.getElementById("map"); // Get the map div
+
+// function initMap() {
+//   const map = new google.maps.Map(mapDiv, {
+//     center: { lat: 0, lng: 0 },
+//     zoom: 2,
+//   });
+
+//   const cards = document.querySelectorAll(".card");
+
+//   for (let i = 0; i < cards.length; i++) {
+//     const lat = parseFloat(cards[i].dataset.lat);
+//     const lng = parseFloat(cards[i].dataset.lng);
+//     if (!isNaN(lat) && !isNaN(lng)) {
+//       const marker = new google.maps.Marker({
+//         position: { lat, lng },
+//         map,
+//       });
+//     }
+//   }
+// }
 
 function init() {
   // this will return and array of obj's
   retriveUsers(12); // this will return and array of obj's
   getUserFromLocalStorage(); // Get the user object from local storage
+  // initMap(); // Initialize the map
 }
 
 function getUserFromLocalStorage() {
@@ -26,6 +48,24 @@ signOutBtn.addEventListener("click", () => {
   // Add a click event listener to the sign-out button
   location.replace("index.html"); // Redirect to the home page
 });
+
+// function showUsersOnMap(users) {
+//   const map = new google.maps.Map(mapDiv, {
+//     center: { lat: 0, lng: 0 },
+//     zoom: 2,
+//   });
+
+//   for (let i = 0; i < users.length; i++) {
+//     const lat = parseFloat(users[i].address.coordinates.lat);
+//     const lng = parseFloat(users[i].address.coordinates.lng);
+//     if (!isNaN(lat) && !isNaN(lng)) {
+//       const marker = new google.maps.Marker({
+//         position: { lat, lng },
+//         map,
+//       });
+//     }
+//   }
+// }
 
 function retriveUsers(numHowManyUsersYouWant) {
   let requestUrl = `https://random-data-api.com/api/v2/users?size=${numHowManyUsersYouWant}&response_type=json`;
@@ -45,6 +85,7 @@ function retriveUsers(numHowManyUsersYouWant) {
           .append(createUserCard(data[index]));
         // let currentUser = createUserCard(data[index]);
       }
+      // showUsersOnMap(data);
     });
 }
 
@@ -120,6 +161,26 @@ function createUserCard(cardData) {
 
   return card;
 }
+
+// function initMap() {
+//   const map = new google.maps.Map(mapDiv, {
+//     center: { lat: 0, lng: 0 },
+//     zoom: 2,
+//   });
+
+//   const cards = document.querySelectorAll(".card");
+
+//   for (let i = 0; i < cards.length; i++) {
+//     const lat = parseFloat(cards[i].dataset.lat);
+//     const lng = parseFloat(cards[i].dataset.lng);
+//     if (!isNaN(lat) && !isNaN(lng)) {
+//       const marker = new google.maps.Marker({
+//         position: { lat, lng },
+//         map,
+//       });
+//     }
+//   }
+// }
 
 function moreDetails(cardData) {
   localStorage.setItem("more-detail", JSON.stringify(cardData));
