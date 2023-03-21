@@ -159,6 +159,10 @@
    height: 15em;
    margin: 0 auto;
  }
+
+ .modal-content{
+   color: #FFF;
+
  .panel-block {
    position: relative;
  }
@@ -169,6 +173,7 @@
  }
  .trash-anchor i {
    color: #ff3860;
+
  }
  @media screen and (min-width: 1024px) {
    .user-form {

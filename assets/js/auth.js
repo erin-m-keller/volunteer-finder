@@ -1,5 +1,8 @@
 let user; // Create a user object
 
+//select modal
+let modal = document.querySelector('.modal');
+
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -95,6 +98,7 @@ function loadFirebase() {
                 const errorCode = error.code; // Get the error code
                 const errorMessage = error.message; // Get the error message
                 console.log(errorCode, errorMessage); // Log the error
+                callModal(modal,errorCode, errorMessage);
               });
           });
 
@@ -152,6 +156,7 @@ function loadFirebase() {
                 const errorCode = error.code; // Get the error code
                 const errorMessage = error.message; // Get the error message
                 console.log(errorCode, errorMessage);
+                callModal(modal,errorCode, errorMessage);
               });
           });
 
@@ -207,6 +212,7 @@ function loadFirebase() {
                 const errorCode = error.code; // Get the error code
                 const errorMessage = error.message; // Get the error message
                 console.error(errorCode, errorMessage); // Log the error
+                callModal(modal,errorCode, errorMessage);
               });
           });
 
@@ -225,6 +231,33 @@ function loadFirebase() {
       );
     }
   );
+}
+
+function callModal(modalObj,errorCode,errorMessage){
+  modalObj.children[1].innerText = styleErrorMessage(errorCode,errorMessage);
+  modalObj.classList.add('is-active');  
+}
+
+
+function styleErrorMessage(errorCode,errorMessage){
+//auth/email-already-in-use
+
+  switch (errorCode) {
+    case 'auth/too-many-requests':
+      
+      return 'Account locked';
+  
+    case 'auth/wrong-password':
+
+      return 'Please enter the correct password';
+
+    case 'auth/email-already-in-use':
+      return 'Please enter a New Email, Already in use.';
+    default:
+      break;
+  }
+
+  return;
 }
 
 loadFirebase();
