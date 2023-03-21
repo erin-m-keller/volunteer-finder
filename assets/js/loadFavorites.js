@@ -23,8 +23,6 @@ function initMap() {
   const cards = document.querySelectorAll(".card");
 
   for (let i = 0; i < cards.length; i++) {
-    const lat = parseFloat(cards[i].dataset.lat);
-    const lng = parseFloat(cards[i].dataset.lng);
     if (!isNaN(lat) && !isNaN(lng)) {
       const marker = new google.maps.Marker({
         position: { lat, lng },
