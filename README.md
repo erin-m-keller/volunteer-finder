@@ -27,7 +27,7 @@ Web application that allows businesses to create accounts and search for and/or 
 
 ```md
 AS A business owner
-I WANT to see available volunteers in my area
+I WANT to see available volunteers 
 SO THAT I can plan a volunteer project
 ```
 
@@ -37,12 +37,24 @@ SO THAT I can plan a volunteer project
 GIVEN when I access the page I am presented with a login/sign-up form
 GIVEN an account has been created
 WHEN I sign-in/sign-up to the website
-THEN I view the main dashboard
-WHEN I view the dashboard
-THEN I am presented with a list of available volunteers
+THEN I view the main page
+WHEN I view the main page
+THEN I am presented with a list of available volunteers (avatar, name, city/state)
 WHEN I click the volunteer
-THEN I am presented with their information (avatar, name, city/state, phone/email)  
-and a map with their location and a link to contact the volunteer
+THEN I am presented with their information (avatar, name, address, phone/email),  
+a map with their location, a link to contact the volunteer and a button to save  
+the volunteer to my preferred users list in the profile settings page  
+WHEN I view the profile settings page
+THEN I can update my name, email and/or business name and view a list of my  
+previously saved volunteers
+WHEN I click update
+THEN a modal window displays asking if I would like to save my changes
+WHEN I click on a volunteer I can navigate to a page with more details about  
+the selected volunteer
+WHEN I click the trash icon next to the selected volunteer
+THEN I can delete the volunteer from my list
+WHEN I click the sign out button
+THEN I am redirected to the login page
 ```
 
 ## Project Requirements
