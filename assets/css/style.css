@@ -158,10 +158,30 @@
    width: 90%;
    height: 15em;
    margin: 0 auto;
- }
-
+ } 
+ /* modal style */
  .modal-content{
    color: #FFF;
+   padding: 4rem;
+   border-radius: 1rem;
+   font-size: 1.25rem;
+   background-color: #262626;
+   -webkit-animation-name: animatetop;
+   -webkit-animation-duration: 0.4s;
+   animation-name: animatetop;
+   animation-duration: 0.4s
+      
+  }
+  /* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
 
  .panel-block {
    position: relative;

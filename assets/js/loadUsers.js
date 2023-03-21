@@ -130,7 +130,7 @@ function loadPreferredUsers() {
     );
   } catch (error) {}
 }
-
+//create a element for the dom - card for the list of users generated from random-data-api
 function createUserCard(cardData) {
   let card = document.createElement("div");
   card.classList.add("card");

@@ -119,7 +119,7 @@ function loadFirebase() {
                 if (userFromStorage) {
                   user = userFromStorage; // Set the user object to the user object from local storage
                   if (user.uid === userData.uid) {
-                    location.href = "listUsersTesting.html"; // Redirect to the list users page
+                    location.href = "volunteer-list.html"; // Redirect to the list users page
                   } else {
                     user = {
                       // Create a user object
@@ -147,7 +147,7 @@ function loadFirebase() {
                   setUserToLocalStorage(); // Set the user object to local storage
                 }
 
-                location.href = "listUsersTesting.html"; // Redirect to the list users page
+                location.href = "volunteer-list.html"; // Redirect to the list users page
 
                 signOutBtn.style.display = "block"; // Show the sign-out button
               })
@@ -175,7 +175,7 @@ function loadFirebase() {
                 if (userFromStorage) {
                   user = userFromStorage;
                   if (user.uid === userData.uid) {
-                    location.href = "listUsersTesting.html"; // Redirect to the list users page
+                    location.href = "volunteer-list.html"; // Redirect to the list users page
                   } else {
                     user = {
                       // Create a user object
@@ -203,7 +203,7 @@ function loadFirebase() {
                   setUserToLocalStorage(); // Set the user object to local storage
                 }
 
-                location.href = "listUsersTesting.html"; // Redirect to the list users page
+                location.href = "volunteer-list.html"; // Redirect to the list users page
 
                 signOutBtn.style.display = "block"; // Show the sign-out button
               })
@@ -238,11 +238,10 @@ function callModal(modalObj,errorCode,errorMessage){
   modalObj.classList.add('is-active');  
 }
 
-
+//error Message left in for continued Dev
 function styleErrorMessage(errorCode,errorMessage){
-//auth/email-already-in-use
-
   switch (errorCode) {
+
     case 'auth/too-many-requests':
       
       return 'Account locked';
@@ -252,7 +251,9 @@ function styleErrorMessage(errorCode,errorMessage){
       return 'Please enter the correct password';
 
     case 'auth/email-already-in-use':
-      return 'Please enter a New Email, Already in use.';
+      return 'Please enter a New Email, this one is already in use.';
+
+      //add goodle sign in errors
     default:
       break;
   }
