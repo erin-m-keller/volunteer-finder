@@ -36,12 +36,6 @@
           </div>
           <div class="navbar-end">
             <div class="navbar-item">
-              <img src="" id="user-image" class="user" />
-              <input class="input" type="text" style="display:none" id="user-name">
-              <input class="input" type="email" style="display:none" id="user-email">
-              <input class="input" type="email" style="display:none" id="user-business">
-            </div>
-            <div class="navbar-item">
               <div class="buttons">
                 <a id="sign-out" class="button is-primary">
                   <strong>Sign Out</strong>
@@ -57,11 +51,18 @@
     </div>
     <main>
       <div class="container section"></div>
+<<<<<<< HEAD
       <div id="map"></div>
+=======
+      <div class="container section">
+        <div class="notification is-primary" id="success" style="display:none">
+          <button class="delete" onclick="closeMsg()"></button>
+          User added to favorites.
+        </div>
+      </div>
+>>>>>>> develop
     </main>
-    <footer
-      class="footer has-text-centered is-flex-align-items-flex-end mt-auto"
-    >
+    <footer class="footer has-text-centered is-flex-align-items-flex-end mt-auto">
       <h3>&copy; 2023</h3>
     </footer>    
     <script src="./assets/js/loadFavorites.js"></script>

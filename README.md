@@ -2,7 +2,7 @@
 
 ## Description
 
-**// TODO: Add project description here**
+Web application that allows businesses to create accounts and search for and/or favorite volunteers to work with on initiatives.
 
 ## Table of Contents
   * [Technology Stack](#technology-stack)
@@ -17,12 +17,11 @@
 
 ## Technology Stack
 
-**// TODO: Temporary badges - update with correct badges once application is complete**
-
 ![HTML5](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
-![javaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![bulma](./assets/images/bulma.svg)
+![javaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![fireBase](./assets/images/firebase.svg)
 
 ## User Story
 

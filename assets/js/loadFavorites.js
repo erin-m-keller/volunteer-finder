@@ -175,11 +175,17 @@ function savePreferredUsers() {
       localStorage.setItem('preferredUsers', JSON.stringify(userArr));
   }
   loadPreferredUsers();
-  let notification = document.createElement("div");
-  notification.classList.add("notification");
-  notification.classList.add("is-primary");
-  notification.textContent = "User added to favorites";
-  document.querySelector(".container").append(notification);
+  // initialize variables
+  let successMsg = document.getElementById("success");
+  // show success message
+  successMsg.style.display = "block";
+}
+
+function closeMsg() {
+  // initialize variables
+  let successMsg = document.getElementById("success");
+  // hide success message
+  successMsg.style.display = "none";
 }
 
 function toggleMobileMenu () {
