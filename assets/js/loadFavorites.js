@@ -7,33 +7,6 @@ const myAccountBtn = document.getElementById("my-account"); // Get the my-accoun
 
 const userObj = localStorage.getItem("more-detail");
 
-const mapDiv = document.getElementById("map"); // Get the map div
-
-// Attach your callback function to the `window` object
-function initMap() {
-  // JS API is loaded and available
-
-  const detail = JSON.parse(userObj); // Parse the user object
-  const { lat, lng } = detail.address.coordinates; // Get the coordinates
-
-  const map = new google.maps.Map(mapDiv, {
-    center: { lat: lat, lng: lng },
-    zoom: 2,
-  });
-  const cards = document.querySelectorAll(".card");
-
-  for (let i = 0; i < cards.length; i++) {
-    if (!isNaN(lat) && !isNaN(lng)) {
-      const marker = new google.maps.Marker({
-        position: { lat, lng },
-        map,
-      });
-    }
-  }
-}
-
-window.initMap = initMap;
-
 function init() {
   // this will return and array of obj's
   getUserFromLocalStorage(); // Get the user object from local storage
@@ -115,6 +88,7 @@ function createUserCard(cardData) {
 
   let mediaContent = document.createElement("div");
   mediaContent.classList.add("media-content");
+  mediaContent.style.marginTop = "5rem";
 
   let title = document.createElement("p");
   title.classList.add("title");
@@ -151,6 +125,18 @@ function createUserCard(cardData) {
     history.go(-1);
   });
 
+  let successMsg = document.createElement("div");
+  successMsg.classList.add("notification");
+  successMsg.classList.add("is-primary");
+  successMsg.id = "success";
+  successMsg.textContent = "User added to favorites!";
+  successMsg.style.display = "none";
+
+  let mapDiv = document.createElement("div");
+  mapDiv.id = "map";
+  mapDiv.style.width = "100%";
+  mapDiv.style.height = "300px";
+
   mediaContent.append(title);
   mediaContent.append(subtitle);
   figure.append(img);
@@ -158,10 +144,39 @@ function createUserCard(cardData) {
   media.append(mediaLeft);
   media.append(mediaContent);
   cardContent.append(media);
-  cardContent.append(content);
-  cardContent.append(backBtn);
-  cardContent.append(button);
+  mediaContent.append(content);
+  mediaContent.append(backBtn);
+  mediaContent.append(button);
+  cardContent.append(successMsg);
+  cardContent.append(mapDiv);
   card.append(cardContent);
+
+  // const mapDiv = document.getElementById("map"); // Get the map div
+
+  // Attach your callback function to the `window` object
+  function initMap() {
+    // JS API is loaded and available
+
+    const detail = JSON.parse(userObj); // Parse the user object
+    const { lat, lng } = detail.address.coordinates; // Get the coordinates
+
+    const map = new google.maps.Map(mapDiv, {
+      center: { lat: lat, lng: lng },
+      zoom: 8,
+    });
+    const cards = document.querySelectorAll(".card");
+
+    for (let i = 0; i < cards.length; i++) {
+      if (!isNaN(lat) && !isNaN(lng)) {
+        const marker = new google.maps.Marker({
+          position: { lat, lng },
+          map,
+        });
+      }
+    }
+  }
+
+  window.initMap = initMap;
 
   return card;
 }
