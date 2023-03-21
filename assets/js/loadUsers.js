@@ -162,7 +162,7 @@ function createUserCard(cardData) {
   button.textContent = "More Info";
   button.addEventListener("click", function () {
     moreDetails(cardData);
-  });
+});
 
   mediaContent.append(title);
   mediaContent.append(subtitle);
