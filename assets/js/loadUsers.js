@@ -119,7 +119,7 @@ function retriveUsers(numHowManyUsersYouWant) {
           .append(createUserCard(data[index]));
         // let currentUser = createUserCard(data[index]);
       }
-      showUsersOnMap(data);
+      // showUsersOnMap(data);
     });
 }
 
@@ -145,14 +145,16 @@ function createUserCard(cardData) {
 
   let mediaLeft = document.createElement("div");
   mediaLeft.classList.add("media-left");
+  mediaLeft.setAttribute('id','media-avatar');
 
   let figure = document.createElement("figure");
   figure.classList.add("image");
   figure.classList.add("is-300x300");
 
   let img = document.createElement("img");
+  //seting the avatar of the card from the api
   img.src = cardData.avatar;
-  img.alt = "Placeholder image";
+  img.alt = "Randomly generated Robot Avatar Image";
 
   let mediaContent = document.createElement("div");
   mediaContent.classList.add("media-content");
@@ -160,17 +162,28 @@ function createUserCard(cardData) {
   let title = document.createElement("p");
   title.classList.add("title");
   title.classList.add("is-2");
+  //set firstname and lastname for card
   title.textContent = `${cardData.first_name} ${cardData.last_name}`;
 
   let subtitle = document.createElement("p");
   subtitle.classList.add("subtitle");
   subtitle.classList.add("is-4");
+  //set email for card
   subtitle.textContent = `${cardData.email}`;
   //subtitle.href=`mailto:${cardData.email}`;
 
   let content = document.createElement("div");
   content.classList.add("content");
-  content.textContent = ` ${cardData.address.city}, ${cardData.address.state} - Phone: ${cardData.phone_number}`;
+
+  let address = document.createElement("address")
+  let pPhone = document.createElement('p');
+  let pCityState = document.createElement('p');
+  pPhone.textContent = `${cardData.phone_number}`;
+  pCityState.textContent = `${cardData.address.city},${cardData.address.state}`;
+  address.append(pPhone);
+  address.append(pCityState);
+  content.append(address);
+  // content.textContent = ` ${cardData.address.city}, ${cardData.address.state} - Phone: ${cardData.phone_number}`;
   //avatar: ${cardData.avatar}
   //avatar,  city/state, phone/
 
