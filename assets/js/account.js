@@ -1,13 +1,13 @@
+// initialize variables
+let userObj = JSON.parse(localStorage.getItem("user")),
+    updatedUserObj = JSON.parse(localStorage.getItem("updatedUser")),
+    preferredVolunteers = JSON.parse(localStorage.getItem("preferredUsers"));
 
 /**
  * @init
  * Runs on page load
  */
 function init () {
-  // initialize variables
-  let userObj = JSON.parse(localStorage.getItem("user")),
-      updatedUserObj = JSON.parse(localStorage.getItem("updatedUser")),
-      preferredVolunteers = JSON.parse(localStorage.getItem("preferredUsers"));
   // if the user has previously updated their data
   if (updatedUserObj) {
     buildUserProfile(updatedUserObj);
@@ -17,7 +17,7 @@ function init () {
     buildUserProfile(userObj);
   }
   // if the user has added preferred volunteers, load volunteers list
-  if (preferredVolunteers) {
+  if (preferredVolunteers && preferredVolunteers.length > 0) {
     loadVolunteers(preferredVolunteers);
   } else {
     document.getElementById("panel-msg").style.display = "block";
@@ -132,31 +132,68 @@ function updateUserProfile () {
 }
 
 /**
+ * @deletePreferredVolunteer
+ * Delete the selected volunteer from
+ * the preferred volunteers list
+ */
+function deletePreferredVolunteer (uid) {
+  // initialize variables
+  let selectedVolunteer = preferredVolunteers.findIndex((elem) => elem.id === uid);
+  // if the selected index is found
+  if (selectedVolunteer > -1) {
+    // remove the selected volunteer from the array
+    preferredVolunteers.splice(selectedVolunteer, 1);
+    // update local storage
+    localStorage.setItem("preferredUsers", JSON.stringify(preferredVolunteers));
+    // get the new storage array
+    let newStorage = JSON.parse(localStorage.getItem("preferredUsers"));
+    // load the new list of volunteers
+    loadVolunteers(newStorage);
+  }
+}
+
+/**
  * @loadVolunteers
  * Load the user's preferred volunteers
  */
-function loadVolunteers (preferredVolunteers) {
+function loadVolunteers (list) {
   // initialize variables
   let link,
-      volunteerList = preferredVolunteers,
+      volunteerList = list,
       mainWrapper = document.getElementById("volunteer-list");
+  // clear any previous contents
+  mainWrapper.innerHTML = "";
+  // show message if list is empty
+  if (volunteerList.length === 0) { 
+    document.getElementById("panel-msg").style.display = "block"; 
+  }
   // loop through list and create an anchor element of each volunteer
   for (let i = 0; i < volunteerList.length; i++) {
-    let anchor = document.createElement('a'),
-        span = document.createElement('span'),
-        icon = document.createElement('i'),
+    let div = document.createElement("div"),
+        anchor = document.createElement("a"),
+        trashAnchor = document.createElement("a"),
+        span = document.createElement("span"),
+        icon = document.createElement("i"),
+        trashIcon = document.createElement("i"),
         firstName = volunteerList[i].first_name,
-        lastName = volunteerList[i].last_name;
+        lastName = volunteerList[i].last_name,
+        uid = volunteerList[i].id;
     link = document.createTextNode(firstName + " " + lastName);
     // create the elements to append to the panel
-    anchor.className = "panel-block";
+    div.className = "panel-block";
     span.className = "panel-icon";
     icon.className = "fas fa-circle-user";
+    trashIcon.className = "fas fa-trash-can";
     anchor.appendChild(span);
     anchor.appendChild(icon);
     anchor.appendChild(link);
+    trashAnchor.className = "trash-anchor";
+    trashAnchor.appendChild(trashIcon);
+    trashAnchor.addEventListener("click", () => deletePreferredVolunteer(uid));
     anchor.addEventListener("click", () => moreDetails(volunteerList[i]));
-    mainWrapper.appendChild(anchor);
+    div.appendChild(anchor);
+    div.appendChild(trashAnchor);
+    mainWrapper.appendChild(div);
   }
 }
 
