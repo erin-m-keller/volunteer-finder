@@ -35,7 +35,7 @@ function retriveUser() {
       .querySelector(".container")
       .append(createUserCard(JSON.parse(userObj)));
   } else {
-    location.replace("listUsersTesting.html"); // Redirect to the list page
+    location.replace("volunteer-list.html"); // Redirect to the list page
   }
 }
 
@@ -44,6 +44,7 @@ function loadPreferredUsers() {
     preferredUsers = JSON.parse(localStorage.getItem("preferredUsers"));
   } catch (error) {}
 }
+
 
 function createUserCard(cardData) {
   let card = document.createElement("div");
