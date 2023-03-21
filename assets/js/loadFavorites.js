@@ -113,9 +113,9 @@ function createUserCard(cardData) {
   media.append(mediaLeft);
   media.append(mediaContent);
   cardContent.append(media);
-  cardContent.append(content);
-  cardContent.append(backBtn);
-  cardContent.append(button);
+  mediaContent.append(content);
+  mediaContent.append(backBtn);
+  mediaContent.append(button);
   card.append(cardContent);
 
   return card;
