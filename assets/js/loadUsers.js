@@ -176,10 +176,10 @@ function createUserCard(cardData) {
   content.classList.add("content");
 
   let address = document.createElement("address")
-  let pPhone = document.createElement('p');
-  let pCityState = document.createElement('p');
+  let pPhone = document.createElement('div');
+  let pCityState = document.createElement('div');
   pPhone.textContent = `${cardData.phone_number}`;
-  pCityState.textContent = `${cardData.address.city},${cardData.address.state}`;
+  pCityState.textContent = `${cardData.address.city}, ${cardData.address.state}`;
   address.append(pPhone);
   address.append(pCityState);
   content.append(address);
