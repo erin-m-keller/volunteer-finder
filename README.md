@@ -14,6 +14,7 @@ Web application that allows businesses to create accounts and search for and/or 
   * [Screenshot](#screenshot)
   * [Deployed page](#deployed-page)
   * [License](#license)
+  * [Outside Resources](#outside-resources)
 
 ## Technology Stack
 
@@ -98,3 +99,8 @@ used, screenshot, and link to the deployed application).
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
+
+## Outside Resources
+
+  * [Firebase](https://firebase.google.com/docs)
+  * [Bulma](https://bulma.io/documentation/)
