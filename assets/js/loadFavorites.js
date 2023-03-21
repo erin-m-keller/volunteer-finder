@@ -7,6 +7,31 @@ const myAccountBtn = document.getElementById("my-account"); // Get the my-accoun
 
 const userObj = localStorage.getItem("more-detail");
 
+const mapDiv = document.getElementById("map"); // Get the map div
+
+// Attach your callback function to the `window` object
+function initMap () {
+  // JS API is loaded and available
+  const map = new google.maps.Map(mapDiv, {
+    center: { lat: 0, lng: 0 },
+    zoom: 2,
+  });
+  const cards = document.querySelectorAll(".card");
+
+  for (let i = 0; i < cards.length; i++) {
+    const lat = parseFloat(cards[i].dataset.lat);
+    const lng = parseFloat(cards[i].dataset.lng);   
+    if (!isNaN(lat) && !isNaN(lng)) {
+      const marker = new google.maps.Marker({
+        position: { lat, lng },
+        map,
+      });
+    }
+  }
+};
+
+window.initMap = initMap;
+
 function init() {
   // this will return and array of obj's
   getUserFromLocalStorage(); // Get the user object from local storage
@@ -28,6 +53,24 @@ signOutBtn.addEventListener("click", () => {
   // Add a click event listener to the sign-out button
   location.replace("index.html"); // Redirect to the home page
 });
+
+function showUsersOnMap(users) {
+   const map = new google.maps.Map(mapDiv, {
+     center: { lat: 0, lng: 0 },
+     zoom: 2,
+   });
+
+   for (let i = 0; i < users.length; i++) {
+     const lat = parseFloat(users[i].address.coordinates.lat);
+     const lng = parseFloat(users[i].address.coordinates.lng);
+     if (!isNaN(lat) && !isNaN(lng)) {
+       const marker = new google.maps.Marker({
+         position: { lat, lng },
+         map,
+       });
+     }
+   }
+}
 
 function retriveUser() {
   if (userObj) {
@@ -133,11 +176,17 @@ function savePreferredUsers() {
       localStorage.setItem('preferredUsers', JSON.stringify(userArr));
   }
   loadPreferredUsers();
-  let notification = document.createElement("div");
-  notification.classList.add("notification");
-  notification.classList.add("is-primary");
-  notification.textContent = "User added to favorites";
-  document.querySelector(".container").append(notification);
+  // initialize variables
+  let successMsg = document.getElementById("success");
+  // show success message
+  successMsg.style.display = "block";
+}
+
+function closeMsg() {
+  // initialize variables
+  let successMsg = document.getElementById("success");
+  // hide success message
+  successMsg.style.display = "none";
 }
 
 function toggleMobileMenu () {
