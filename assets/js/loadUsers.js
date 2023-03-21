@@ -30,6 +30,24 @@ function initMap () {
 };
 
 function init() {
+
+  window.addEventListener('scroll',()=>{
+    const {
+      scrollTop,
+      scrollHeight,
+      clientHeight
+    } = document.documentElement;
+
+    if (scrollTop + clientHeight >= scrollHeight -5) {
+      
+      retriveUsers(12); // this will return and array of obj's
+
+    }
+
+  })
+
+
+
   retriveUsers(12); // this will return and array of obj's
   getUserFromLocalStorage(); // Get the user object from local storage
 }
@@ -195,5 +213,8 @@ function toggleMobileMenu () {
     navMenu.classList.add("is-active");
   }
 }
+
+
+
 
 init();
