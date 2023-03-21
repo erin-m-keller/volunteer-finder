@@ -48,7 +48,7 @@ WHEN I visit the profile settings page
 THEN I can update my name, email and/or business name
 WHEN I update my data
 THEN I am presented with a modal confirming my changes
-WHEN I view the volunteer list
+WHEN I view the volunteer list on the profile settings page
 THEN I can click the volunteer name to view more details, or  
 click the trash icon to remove from my list
 WHEN I click the sign out button
