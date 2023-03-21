@@ -27,7 +27,7 @@ Web application that allows businesses to create accounts and search for and/or 
 
 ```md
 AS A business owner
-I WANT to see available volunteers in my area
+I WANT to see available volunteers
 SO THAT I can plan a volunteer project
 ```
 
