@@ -167,17 +167,24 @@ function loadVolunteers (list) {
   if (volunteerList.length === 0) { 
     document.getElementById("panel-msg").style.display = "block"; 
   }
+  // remove duplicate volunteers from the list
+  var officialList = volunteerList.reduce((elem, item) => {
+    if(!elem.some(obj => obj.id === item.id)) {
+      elem.push(item);
+    }
+    return elem;
+  },[]);
   // loop through list and create an anchor element of each volunteer
-  for (let i = 0; i < volunteerList.length; i++) {
+  for (let i = 0; i < officialList.length; i++) {
     let div = document.createElement("div"),
         anchor = document.createElement("a"),
         trashAnchor = document.createElement("a"),
         span = document.createElement("span"),
         icon = document.createElement("i"),
         trashIcon = document.createElement("i"),
-        firstName = volunteerList[i].first_name,
-        lastName = volunteerList[i].last_name,
-        uid = volunteerList[i].id;
+        firstName = officialList[i].first_name,
+        lastName = officialList[i].last_name,
+        uid = officialList[i].id;
     link = document.createTextNode(firstName + " " + lastName);
     // create the elements to append to the panel
     div.className = "panel-block";
@@ -190,7 +197,7 @@ function loadVolunteers (list) {
     trashAnchor.className = "trash-anchor";
     trashAnchor.appendChild(trashIcon);
     trashAnchor.addEventListener("click", () => deletePreferredVolunteer(uid));
-    anchor.addEventListener("click", () => moreDetails(volunteerList[i]));
+    anchor.addEventListener("click", () => moreDetails(officialList[i]));
     div.appendChild(anchor);
     div.appendChild(trashAnchor);
     mainWrapper.appendChild(div);
