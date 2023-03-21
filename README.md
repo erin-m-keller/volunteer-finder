@@ -37,12 +37,22 @@ SO THAT I can plan a volunteer project
 GIVEN when I access the page I am presented with a login/sign-up form
 GIVEN an account has been created
 WHEN I sign-in/sign-up to the website
-THEN I view the main dashboard
-WHEN I view the dashboard
-THEN I am presented with a list of available volunteers
-WHEN I click the volunteer
+THEN I view the main page
+WHEN I view the main page
+THEN I am presented with a list of available volunteers (avatar, name, city/state)
+WHEN I click a volunteer
 THEN I am presented with their information (avatar, name, city/state, phone/email)  
-and a map with their location and a link to contact the volunteer
+a map with their location, a link to contact the volunteer, and a button to  
+save to my preferred volunteers list
+WHEN I visit the profile settings page
+THEN I can update my name, email and/or business name
+WHEN I update my data
+THEN I am presented with a modal confirming my changes
+WHEN I view the volunteer list
+THEN I can click the volunteer name to view more details, or  
+click the trash icon to remove from my list
+WHEN I click the sign out button
+THEN I am redirected to the login page
 ```
 
 ## Project Requirements
