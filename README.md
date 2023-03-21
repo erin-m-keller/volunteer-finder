@@ -79,7 +79,7 @@ used, screenshot, and link to the deployed application).
 
 ## Screenshot
 
-![PlaceholderScreen](./assets/images/placeholder.png)
+![PlaceholderScreen](./assets/images/finished-product.png)
 
 ## Deployed page
 
