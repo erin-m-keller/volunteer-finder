@@ -10,17 +10,21 @@ const userObj = localStorage.getItem("more-detail");
 const mapDiv = document.getElementById("map"); // Get the map div
 
 // Attach your callback function to the `window` object
-function initMap () {
+function initMap() {
   // JS API is loaded and available
+
+  const detail = JSON.parse(userObj); // Parse the user object
+  const { lat, lng } = detail.address.coordinates; // Get the coordinates
+
   const map = new google.maps.Map(mapDiv, {
-    center: { lat: 0, lng: 0 },
+    center: { lat: lat, lng: lng },
     zoom: 2,
   });
   const cards = document.querySelectorAll(".card");
 
   for (let i = 0; i < cards.length; i++) {
     const lat = parseFloat(cards[i].dataset.lat);
-    const lng = parseFloat(cards[i].dataset.lng);   
+    const lng = parseFloat(cards[i].dataset.lng);
     if (!isNaN(lat) && !isNaN(lng)) {
       const marker = new google.maps.Marker({
         position: { lat, lng },
@@ -28,7 +32,7 @@ function initMap () {
       });
     }
   }
-};
+}
 
 window.initMap = initMap;
 
@@ -55,21 +59,21 @@ signOutBtn.addEventListener("click", () => {
 });
 
 function showUsersOnMap(users) {
-   const map = new google.maps.Map(mapDiv, {
-     center: { lat: 0, lng: 0 },
-     zoom: 2,
-   });
+  const map = new google.maps.Map(mapDiv, {
+    center: { lat: 0, lng: 0 },
+    zoom: 2,
+  });
 
-   for (let i = 0; i < users.length; i++) {
-     const lat = parseFloat(users[i].address.coordinates.lat);
-     const lng = parseFloat(users[i].address.coordinates.lng);
-     if (!isNaN(lat) && !isNaN(lng)) {
-       const marker = new google.maps.Marker({
-         position: { lat, lng },
-         map,
-       });
-     }
-   }
+  for (let i = 0; i < users.length; i++) {
+    const lat = parseFloat(users[i].address.coordinates.lat);
+    const lng = parseFloat(users[i].address.coordinates.lng);
+    if (!isNaN(lat) && !isNaN(lng)) {
+      const marker = new google.maps.Marker({
+        position: { lat, lng },
+        map,
+      });
+    }
+  }
 }
 
 function retriveUser() {
@@ -78,7 +82,7 @@ function retriveUser() {
       .querySelector(".container")
       .append(createUserCard(JSON.parse(userObj)));
   } else {
-    location.replace("volunteer-list.html"); // Redirect to the list page
+    location.replace("listUsersTesting.html"); // Redirect to the list page
   }
 }
 
@@ -87,7 +91,6 @@ function loadPreferredUsers() {
     preferredUsers = JSON.parse(localStorage.getItem("preferredUsers"));
   } catch (error) {}
 }
-
 
 function createUserCard(cardData) {
   let card = document.createElement("div");
@@ -157,9 +160,9 @@ function createUserCard(cardData) {
   media.append(mediaLeft);
   media.append(mediaContent);
   cardContent.append(media);
-  mediaContent.append(content);
-  mediaContent.append(backBtn);
-  mediaContent.append(button);
+  cardContent.append(content);
+  cardContent.append(backBtn);
+  cardContent.append(button);
   card.append(cardContent);
 
   return card;
@@ -167,13 +170,13 @@ function createUserCard(cardData) {
 
 function savePreferredUsers() {
   let arr = [],
-      userArr = JSON.parse(localStorage.getItem('preferredUsers'));
-  if(!userArr) {
-      arr.push(JSON.parse(userObj));
-      localStorage.setItem('preferredUsers', JSON.stringify(arr));
+    userArr = JSON.parse(localStorage.getItem("preferredUsers"));
+  if (!userArr) {
+    arr.push(JSON.parse(userObj));
+    localStorage.setItem("preferredUsers", JSON.stringify(arr));
   } else {
-      userArr.push(JSON.parse(userObj));
-      localStorage.setItem('preferredUsers', JSON.stringify(userArr));
+    userArr.push(JSON.parse(userObj));
+    localStorage.setItem("preferredUsers", JSON.stringify(userArr));
   }
   loadPreferredUsers();
   // initialize variables
@@ -189,9 +192,9 @@ function closeMsg() {
   successMsg.style.display = "none";
 }
 
-function toggleMobileMenu () {
+function toggleMobileMenu() {
   let burgerBtn = document.getElementById("burger-btn"),
-      navMenu = document.getElementById("nav-menu");
+    navMenu = document.getElementById("nav-menu");
   if (burgerBtn.classList.contains("is-active")) {
     burgerBtn.classList.remove("is-active");
     navMenu.classList.remove("is-active");
@@ -201,7 +204,7 @@ function toggleMobileMenu () {
   }
 }
 
-function returnToLastPage () {
+function returnToLastPage() {
   window.location.href = window.history.back(1);
 }
 
