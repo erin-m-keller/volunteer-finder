@@ -168,6 +168,7 @@ function createUserCard(cardData) {
   let subtitle = document.createElement("p");
   subtitle.classList.add("subtitle");
   subtitle.classList.add("is-4");
+  subtitle.setAttribute('id','volunteer-email');
   //set email for card
   subtitle.textContent = `${cardData.email}`;
   //subtitle.href=`mailto:${cardData.email}`;
@@ -179,7 +180,9 @@ function createUserCard(cardData) {
   let pPhone = document.createElement('div');
   let pCityState = document.createElement('div');
   pPhone.textContent = `${cardData.phone_number}`;
+  pPhone.setAttribute('id','phone-number');
   pCityState.textContent = `${cardData.address.city}, ${cardData.address.state}`;
+  pCityState.setAttribute('id', 'city-state');
   address.append(pPhone);
   address.append(pCityState);
   content.append(address);
@@ -190,6 +193,7 @@ function createUserCard(cardData) {
   let button = document.createElement("button");
   button.classList.add("button");
   button.classList.add("is-primary");
+  button.setAttribute('id','card-btn')
   button.textContent = "More Info";
   button.addEventListener("click", function () {
     moreDetails(cardData);

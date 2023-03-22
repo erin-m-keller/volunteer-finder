@@ -5,7 +5,7 @@
 
 .media-content{
     border:0.5rem solid #262626;
-    text-align: center;
+    text-align: center;    
     width: 100%;    
     margin-top: 0.25rem;
     padding-bottom: 0.5rem;
@@ -35,6 +35,58 @@
 
 @media screen and (min-width:890px) {
     .media{
-        flex-direction: row;        
+        flex-direction: row; 
+        
+        align-items: end;
     }
+    .media-content{
+        /* min-height: 300px; */
+        text-align: start;
+        width: none;
+    }
+    #volunteer-email{
+        text-align: end;
+        margin-right: 1rem;
+    }
+    #phone-number,#city-state{
+        text-align: center;
+    }
+    #card-btn{
+        margin-left: 1rem;
+        
+    }
+    .content{
+        text-align: end;
+    }
+
+    
+}
+@media screen and (min-width:1605px) {
+    
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+        
+        justify-content: space-around;
+    }
+    .card{
+
+        max-width: 49%;
+        flex-grow: 1;
+        /* margin: 0.15rem; */
+    }
+    
+}
+/* @media screen and (min-width: 1408px){
+    .container:not(.is-max-desktop):not(.is-max-widescreen) {
+        max-width: none;
+    }
+   
+} */
+
+@media screen and (min-width: 1605px){
+    .container:not(.is-max-desktop):not(.is-max-widescreen) {
+        max-width: none;
+    }
+   
 }
