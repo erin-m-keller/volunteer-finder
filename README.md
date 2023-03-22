@@ -103,4 +103,11 @@ used, screenshot, and link to the deployed application).
 ## Outside Resources
 
   * [Firebase](https://firebase.google.com/docs)
-  * [Bulma](https://bulma.io/documentation/)
+  * [Bulma](https://bulma.io/documentation/)    
+  * [Random Data API](https://random-data-api.com/documentation)  
+  * [Selecting Colors](https://coolors.co/)
+  * [Mozilla Dev Docs](https://developer.mozilla.org/)  
+  * [Javascript Dev Docs](https://www.tutorialrepublic.com/)  
+  * [W3 Schools Modal Animation](https://www.w3schools.com/howto/howto_css_modals.asp)
+  * [JS Infinite croll](https://www.javascripttutorial.net/javascript-dom/javascript-infinite-scroll/)  
+
