@@ -77,6 +77,7 @@ function createUserCard(cardData) {
 
   let mediaLeft = document.createElement("div");
   mediaLeft.classList.add("media-left");
+  mediaLeft.setAttribute('id','media-avatar');
 
   let figure = document.createElement("figure");
   figure.classList.add("image");
