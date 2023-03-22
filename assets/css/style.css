@@ -65,6 +65,12 @@
 	50% { background-position: 100% 50%; }
 	100% { background-position: 0% 50%; }
 }
+.sticky {
+  position: fixed !important;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
  
  /************************************************
     HERO                                     @hero
@@ -72,6 +78,7 @@
     The styles for the hero banner
  ************************************************/
  .hero {
+  padding-top: 4rem !important;
    text-align: center;
    padding: 1em;
    background-color: #FFF;
