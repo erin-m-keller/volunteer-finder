@@ -183,9 +183,9 @@ function createUserCard(cardData) {
   pPhone.setAttribute('id','phone-number');
   pCityState.textContent = `${cardData.address.city}, ${cardData.address.state}`;
   pCityState.setAttribute('id', 'city-state');
-  address.append(pPhone);
-  address.append(pCityState);
-  content.append(address);
+  // address.append(pPhone);
+  // address.append(pCityState);
+  // content.append(address);
   // content.textContent = ` ${cardData.address.city}, ${cardData.address.state} - Phone: ${cardData.phone_number}`;
   //avatar: ${cardData.avatar}
   //avatar,  city/state, phone/
@@ -200,13 +200,13 @@ function createUserCard(cardData) {
 });
 
   mediaContent.append(title);
-  mediaContent.append(subtitle);
+  // mediaContent.append(subtitle);
   figure.append(img);
   mediaLeft.append(figure);
   media.append(mediaLeft);
   media.append(mediaContent);
   cardContent.append(media);
-  mediaContent.append(content);
+  // mediaContent.append(content);
   mediaContent.append(button);
   card.append(cardContent);
 

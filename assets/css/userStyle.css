@@ -8,7 +8,7 @@
     text-align: center;    
     width: 100%;    
     margin-top: 0.25rem;
-    padding-bottom: 0.5rem;
+    padding-bottom: 1.5rem;
     border-radius: 0.5rem;
 }
 .content address p{
@@ -32,6 +32,10 @@
 .card{
     margin-block: 0.5rem;
 }
+#card-btn{
+    min-width: 75%;
+}
+
 
 @media screen and (min-width:890px) {
     .media{
@@ -41,7 +45,7 @@
     }
     .media-content{
         /* min-height: 300px; */
-        text-align: start;
+        text-align: center;
         width: none;
     }
     #volunteer-email{
@@ -53,6 +57,7 @@
     }
     #card-btn{
         margin-left: 1rem;
+       
         
     }
     .content{
