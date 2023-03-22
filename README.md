@@ -109,5 +109,5 @@ used, screenshot, and link to the deployed application).
   * [Mozilla Dev Docs](https://developer.mozilla.org/)  
   * [Javascript Dev Docs](https://www.tutorialrepublic.com/)  
   * [W3 Schools Modal Animation](https://www.w3schools.com/howto/howto_css_modals.asp)
-  * [JS Infinite croll](https://www.javascripttutorial.net/javascript-dom/javascript-infinite-scroll/)  
+  * [JS Infinite Scroll](https://www.javascripttutorial.net/javascript-dom/javascript-infinite-scroll/)  
 
