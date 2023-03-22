@@ -84,7 +84,7 @@ used, screenshot, and link to the deployed application).
 ## The Team Tasks
 
 **Kevin Rhode**: [tasks go here]  
-**Joshua Cavell**: [tasks go here]  
+**Joshua Cavell**: [Wireframe, Firebase Auth, Things here and there]
 **Dylan Wednieski**: [tasks go here]  
 **Erin Keller**: [tasks go here]
 
