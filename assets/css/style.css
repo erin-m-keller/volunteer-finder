@@ -95,6 +95,10 @@
   background: url("../images/my-account-header.png") top right no-repeat #262626;
   background-size: contain;
 }
+.hero-img.bg-4 {
+  background: url("../images/3.jpeg") top right no-repeat #262626;
+  background-size: contain;
+}
  
  /************************************************
     MAIN                                     @main
