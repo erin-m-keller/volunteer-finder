@@ -61,32 +61,17 @@
 
     
 }
-@media screen and (min-width:1605px) {
-    
-    .container{
-        display: flex;
-        flex-wrap: wrap;
-        
-        justify-content: space-around;
-    }
-    .card{
 
-        max-width: 49%;
-        flex-grow: 1;
-        /* margin: 0.15rem; */
-    }
-    
-}
 /* @media screen and (min-width: 1408px){
     .container:not(.is-max-desktop):not(.is-max-widescreen) {
         max-width: none;
     }
    
 } */
-
+/* 
 @media screen and (min-width: 1605px){
     .container:not(.is-max-desktop):not(.is-max-widescreen) {
         max-width: none;
     }
    
-}
+} */
