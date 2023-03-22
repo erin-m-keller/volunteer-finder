@@ -104,9 +104,13 @@ function createUserCard(cardData) {
 
   let content = document.createElement("div");
   content.classList.add("content");
-  content.textContent = ` ${cardData.address.city}, ${cardData.address.state} - Phone: ${cardData.phone_number}`;
+  content.textContent = `${cardData.address.city}, ${cardData.address.state}`;
   //avatar: ${cardData.avatar}
   //avatar,  city/state, phone/
+
+  let phone = document.createElement("div");
+  phone.classList.add("content");
+  phone.textContent = `Phone: ${cardData.phone_number}`;
 
   let button = document.createElement("button");
   button.classList.add("button");
@@ -146,6 +150,7 @@ function createUserCard(cardData) {
   media.append(mediaContent);
   cardContent.append(media);
   mediaContent.append(content);
+  mediaContent.append(phone);
   mediaContent.append(backBtn);
   mediaContent.append(button);
   cardContent.append(successMsg);
