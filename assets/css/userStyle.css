@@ -1,30 +1,77 @@
-.media-content{
-    /* flex-grow: 1; */     
-    /* display: flex;
-    flex-direction: column;
-    justify-content: end;
-    height: 300px; */
+.subtitle.is-4{
+    padding: 0rem;
+    margin: 0rem;
 }
-.media{
-    /* flex-grow: 1; */
-     flex-direction: column;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: end;
-    height: 300px; */
+
+.media-content{
+    border:0.5rem solid #262626;
+    text-align: center;    
+    width: 100%;    
+    margin-top: 0.25rem;
+    padding-bottom: 0.5rem;
+    border-radius: 0.5rem;
+}
+.content address p{
+    padding: 0rem;
+    margin: 0rem;
+}
+.title{
+
+    /* text-align: start; */
+    background-color: #262626;
+    color: #c5c5c5;
+
+}
+.media{    
+     flex-direction: column;    
+}
+#media-avatar{
+    align-self: center;
 }
 
 .card{
     margin-block: 0.5rem;
 }
 
-@media screen and (min-width:728px) {
+@media screen and (min-width:890px) {
     .media{
-        /* flex-grow: 1; */
-         flex-direction: row;
-        /* display: flex;
-        flex-direction: column;
-        justify-content: end;
-        height: 300px; */
+        flex-direction: row; 
+        
+        align-items: end;
     }
+    .media-content{
+        /* min-height: 300px; */
+        text-align: start;
+        width: none;
+    }
+    #volunteer-email{
+        text-align: end;
+        margin-right: 1rem;
+    }
+    #phone-number,#city-state{
+        text-align: center;
+    }
+    #card-btn{
+        margin-left: 1rem;
+        
+    }
+    .content{
+        text-align: end;
+    }
+
+    
 }
+
+/* @media screen and (min-width: 1408px){
+    .container:not(.is-max-desktop):not(.is-max-widescreen) {
+        max-width: none;
+    }
+   
+} */
+/* 
+@media screen and (min-width: 1605px){
+    .container:not(.is-max-desktop):not(.is-max-widescreen) {
+        max-width: none;
+    }
+   
+} */

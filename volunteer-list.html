@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900">
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
     <link rel="stylesheet" href="./assets/css/userStyle.css">
+    <link rel="stylesheet" href="./assets/css/listStyle.css">
   </head>
   <body>
     <header>
@@ -36,12 +37,6 @@
           </div>
           <div class="navbar-end">
             <div class="navbar-item">
-              <img src="" id="user-image" class="user" />
-              <input class="input" type="text" style="display:none" id="user-name">
-              <input class="input" type="email" style="display:none" id="user-email">
-              <input class="input" type="email" style="display:none" id="user-business">
-            </div>
-            <div class="navbar-item">
               <div class="buttons">
                 <a id="sign-out" class="button is-primary">
                   <strong>Sign Out</strong>
@@ -57,8 +52,21 @@
     </div>
     <main>
         <div class="container section">
-          <div id="map" hidden></div>
-            <!-- <div class="card">               
+          <!-- <div id="map" hidden></div>            -->
+        </div>     
+    </main>
+    <footer class="footer has-text-centered is-flex-align-items-flex-end mt-auto">
+      <h3>&copy; 2023</h3>
+    </footer>
+    
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDM1cYgsIeVgh6jWgx0CFfMuJGbX_m3eJo&callback=initMap"></script> -->
+    <script src="./assets/js/fontawesome.min.js"></script> 
+    <script src="./assets/js/loadUsers.js"></script>     
+  </body>
+</html>
+
+
+ <!-- <div class="card">               
                 <div class="card-content">
                   <div class="media">
                     <div class="media-left">
@@ -81,13 +89,3 @@
                   </div>
                 </div>
               </div> -->
-        </div>     
-    </main>
-    <footer class="footer has-text-centered is-flex-align-items-flex-end mt-auto">
-      <h3>&copy; 2023</h3>
-    </footer>
-    <script src="./assets/js/loadUsers.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDM1cYgsIeVgh6jWgx0CFfMuJGbX_m3eJo&callback=initMap"></script>
-    <script src="./assets/js/fontawesome.min.js"></script>  
-  </body>
-</html>
