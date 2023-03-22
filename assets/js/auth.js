@@ -1,8 +1,5 @@
 let user; // Create a user object
 
-//select modal
-let modal = document.querySelector('.modal');
-
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -98,7 +95,7 @@ function loadFirebase() {
                 const errorCode = error.code; // Get the error code
                 const errorMessage = error.message; // Get the error message
                 console.log(errorCode, errorMessage); // Log the error
-                callModal(modal,errorCode, errorMessage);
+                callModal(errorCode);
               });
           });
 
@@ -156,7 +153,7 @@ function loadFirebase() {
                 const errorCode = error.code; // Get the error code
                 const errorMessage = error.message; // Get the error message
                 console.log(errorCode, errorMessage);
-                callModal(modal,errorCode, errorMessage);
+                callModal(errorCode);
               });
           });
 
@@ -212,7 +209,7 @@ function loadFirebase() {
                 const errorCode = error.code; // Get the error code
                 const errorMessage = error.message; // Get the error message
                 console.error(errorCode, errorMessage); // Log the error
-                callModal(modal,errorCode, errorMessage);
+                callModal(errorCode);
               });
           });
 
@@ -233,32 +230,58 @@ function loadFirebase() {
   );
 }
 
-function callModal(modalObj,errorCode,errorMessage){
-  modalObj.children[1].innerText = styleErrorMessage(errorCode,errorMessage);
-  modalObj.classList.add('is-active');  
+function callModal(errorCode) {
+  // initialize variables
+  let modalContent = document.getElementById("modal-content"),
+      modal = document.getElementById("confirm-modal"),
+      heading = document.createElement("h2"),
+      btn = document.createElement("button"),
+      headingTxt = document.createTextNode(styleErrorMessage(errorCode)),
+      btnTxt = document.createTextNode("Cancel");
+  // empty previous contents
+  modalContent.innerHTML = "";
+  // append the text to the heading
+  heading.appendChild(headingTxt);
+  // add classes to the button, append the text and add a click event
+  btn.classList.add("button");
+  btn.classList.add("is-danger");
+  btn.appendChild(btnTxt);
+  btn.addEventListener("click", closeConfirmModal);
+  // append heading to container
+  modalContent.appendChild(heading);
+  // append button to container
+  modalContent.appendChild(btn);
+  // set the modal to active
+  modal.classList.add('is-active');  
 }
 
 //error Message left in for continued Dev
-function styleErrorMessage(errorCode,errorMessage){
+function styleErrorMessage(errorCode){
   switch (errorCode) {
-
     case 'auth/too-many-requests':
-      
       return 'Account locked';
-  
     case 'auth/wrong-password':
-
       return 'Please enter the correct password';
-
+    case 'auth/invalid-email':
+      return 'Invalid email, please enter a valid email.';
     case 'auth/email-already-in-use':
       return 'Please enter a New Email, this one is already in use.';
-
       //add goodle sign in errors
     default:
       break;
   }
-
   return;
+}
+
+/**
+ * @closeConfirmModal
+ * Closes the confirm modal
+ */
+function closeConfirmModal () {
+  // initialize variables
+  let confirmModal = document.getElementById("confirm-modal");
+  // add class is-active
+  confirmModal.classList.remove("is-active");
 }
 
 loadFirebase();
