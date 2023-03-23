@@ -94,7 +94,7 @@ used, screenshot, and link to the deployed application).
 
 ## Deployed page
 
-[View Published Page](https://erin-m-keller.github.io/project-one/)
+[View Published Page](https://erin-m-keller.github.io/volunteer-finder/)
 
 ## License
 
