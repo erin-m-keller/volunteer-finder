@@ -4,19 +4,150 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Project One</title>
+    <title>Volunteer Finder</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/bulma.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poiret+One:100,200,300,400,500,600,700,800,900">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900">
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
   </head>
   <body>
-    <header></header>
+    <header class="sticky">
+      <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="javascript:void(0)">
+            <i class="fa-solid fa-hand-holding-heart"></i>&nbsp;&nbsp;VF
+          </a>
+        </div>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a id="sign-out" class="button is-primary" style="display:none">
+                <strong>Sign Out</strong>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
     <main>
-      <p>Content to go here.</p>
+      <div class="hero">
+        <h1>Volunteer Finder</h1>
+      </div>
+      <div class="columns is-desktop">
+        <div class="column">
+          <div class="img-gradient">
+            <img src="./assets/images/4.jpeg" alt="Five people overlapping their hands and holding up a plant in soil" />
+          </div>
+        </div>
+        <div class="column">
+          <div class="signup-form">
+            <div class="tabs">
+              <ul>
+                <li class="is-active" data-target="login"><a onclick="toggleLogin('login')">Login</a></li>
+                <li data-target="sign-up"><a onclick="toggleLogin('sign-up')">Sign Up</a></li>
+              </ul>
+            </div>
+            <div class="tab-content" id="login">
+              <form id="sign-in-form">
+                <div class="field">
+                  <label class="label">Email</label>
+                  <div class="control has-icons-left has-icons-right">
+                    <input id="sign-in-user-email" class="input" type="text" placeholder="Enter Email" required> 
+                    <span class="icon is-small is-left">
+                      <i class="fa-solid fa-envelope"></i>
+                    </span>
+                  </div>
+                  <p class="help">Enter Email</p>
+                </div>
+                <div class="field">
+                  <label class="label">Password</label>
+                  <div class="control has-icons-left has-icons-right">
+                    <input id="sign-in-user-password" class="input" type="password" placeholder="Enter Password" required>
+                    <span class="icon is-small is-left">
+                      <i class="fa-solid fa-lock"></i>
+                    </span>
+                  </div>
+                  <p class="help">Enter Password</p>
+                </div>
+                <button id="sign-in" type="submit" class="button is-primary">Login</button>
+                <button id="sign-in-google" class="button is-primary">Sign in with Google</button>
+            </form>
+            </div>
+            <div class="tab-content" id="sign-up" style="display:none">
+              <form id="sign-up-form">
+                <div class="columns is-desktop">
+                  <div class="field column">
+                    <label class="label">First Name</label>
+                    <div class="control has-icons-left has-icons-right">
+                      <input id="first-name" class="input" type="text" placeholder="Enter First Name" required>
+                      <span class="icon is-small is-left">
+                        <i class="fas fa-user"></i>
+                      </span>
+                    </div>
+                    <p class="help">Enter First Name</p>
+                  </div>
+                  <div class="field column">
+                    <label class="label">Last Name</label>
+                    <div class="control has-icons-left has-icons-right">
+                      <input id="last-name" class="input" type="text" placeholder="Enter Last Name" required>
+                      <span class="icon is-small is-left">
+                        <i class="fas fa-user"></i>
+                      </span>
+                    </div>
+                    <p class="help">Enter Last Name</p>
+                  </div>
+                </div>
+                <div class="field">
+                  <label class="label">Business Name</label>
+                  <div class="control has-icons-left has-icons-right">
+                    <input id="business-name" class="input" type="text" placeholder="Enter Business Name">
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-building"></i>
+                    </span>
+                  </div>
+                  <p class="help">Enter Business Name</p>
+                </div>
+                <div class="field">
+                  <label class="label">Email</label>
+                  <div class="control has-icons-left has-icons-right">
+                    <input id="sign-up-user-email" class="input" type="text" placeholder="Enter Email" required>
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-envelope"></i>
+                    </span>
+                  </div>
+                  <p class="help">Enter Email</p>
+                </div>
+                <div class="field">
+                  <label class="label">Password</label>
+                  <div class="control has-icons-left has-icons-right">
+                    <input id="sign-up-user-password" class="input" type="password" placeholder="Enter Password" required>
+                    <span class="icon is-small is-left">
+                      <i class="fa-solid fa-lock"></i>
+                    </span>
+                  </div>
+                  <p class="help">Enter Password</p>
+                </div>
+                <button class="button is-primary">Sign Up</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal" id="confirm-modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+          <div class="box" id="modal-content"></div>
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+      </div>
     </main>
-    <footer class="footer">
+    <footer class="footer has-text-centered is-flex-align-items-flex-end mt-auto">
       <h3>&copy; 2023</h3>
     </footer>
-    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/modaljs.js"></script>
+    <script src="./assets/js/auth.js"></script>
+    <script src="./assets/js/landing.js"></script>
+    <script src="./assets/js/fontawesome.min.js"></script>
   </body>
 </html>

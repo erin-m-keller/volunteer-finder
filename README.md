@@ -1,8 +1,8 @@
-# Fullstack Developer Bootcamp - Project One
+# Volunteer Finder
 
 ## Description
 
-**// TODO: Add project description here**
+Web application that allows businesses to create accounts and search for and/or favorite volunteers to work with on initiatives.
 
 ## Table of Contents
   * [Technology Stack](#technology-stack)
@@ -14,25 +14,46 @@
   * [Screenshot](#screenshot)
   * [Deployed page](#deployed-page)
   * [License](#license)
+  * [Outside Resources](#outside-resources)
 
 ## Technology Stack
 
-**// TODO: Temporary badges - update with correct badges once application is complete**
-
 ![HTML5](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
+![bulma](./assets/images/bulma.svg)
 ![javaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![fireBase](./assets/images/firebase.svg)
 
 ## User Story
 
 ```md
-Add user story here once application plan is finalized
+AS A business owner
+I WANT to see available volunteers
+SO THAT I can plan a volunteer project
 ```
 
 ## Acceptance Criteria
 
 ```md
-Add acceptance criteria here once application plan is finalized
+GIVEN when I access the page I am presented with a login/sign-up form
+GIVEN an account has been created
+WHEN I sign-in/sign-up to the website
+THEN I view the main page
+WHEN I view the main page
+THEN I am presented with a selection of available volunteers (avatar, name)
+WHEN I click a volunteer
+THEN I am presented with their information (avatar, name, city/state, phone/email)  
+a map with their location, a link to contact the volunteer, and a button to  
+save to my preferred volunteers list
+WHEN I visit the profile settings page
+THEN I can update my name, email and/or business name
+WHEN I update my data
+THEN I am presented with a modal confirming my changes
+WHEN I view the volunteer list on the profile settings page
+THEN I can click the volunteer name to view more details, or  
+click the trash icon to remove from my list
+WHEN I click the sign out button
+THEN I am redirected to the login page
 ```
 
 ## Project Requirements
@@ -62,19 +83,32 @@ used, screenshot, and link to the deployed application).
 
 ## The Team Tasks
 
-**Kevin Rhode**: [tasks go here]  
-**Joshua Cavell**: [tasks go here]  
-**Dylan Wednieski**: [tasks go here]  
-**Erin Keller**: [tasks go here]
+**Kevin Rhode**: HTML, CSS, "Volunteer List Page" (not including Header), Handle Random-Data-Api, JavaScript loadUsers(init, createUserCard, retriveUsers), modaljs.js, Bug Fixes  
+**Joshua Cavell**: Wireframe, Firebase Auth, Things here and there  
+**Dylan Wednieski**: Google Maps API, About page, Feedback help  
+**Erin Keller**: HTML, CSS, JavaScript, "Login" page (not including authentication), "My Account" page, Assisted with bug fixes
 
 ## Screenshot
 
-![PlaceholderScreen](./assets/images/placeholder.png)
+![Screenshot](./assets/images/ss.png)
 
 ## Deployed page
 
-[View Published Page](https://erin-m-keller.github.io/project-one/)
+[View Published Page](https://erin-m-keller.github.io/volunteer-finder/)
 
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
+
+## Outside Resources
+
+  * [Firebase](https://firebase.google.com/docs)
+  * [Bulma](https://bulma.io/documentation/)    
+  * [Random Data API](https://random-data-api.com/documentation)  
+  * [Selecting Colors](https://coolors.co/)
+  * [Mozilla Dev Docs](https://developer.mozilla.org/)  
+  * [Javascript Dev Docs](https://www.tutorialrepublic.com/)  
+  * [W3 Schools Modal Animation](https://www.w3schools.com/howto/howto_css_modals.asp)
+  * [JS Infinite Scroll](https://www.javascripttutorial.net/javascript-dom/javascript-infinite-scroll/)
+  * [Google Maps API](https://developers.google.com/maps/documentation)
+

@@ -1,0 +1,86 @@
+
+@media screen and (min-width:605px) {
+    
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+        
+        justify-content: space-evenly;
+    }
+    .card{
+
+        width: 605px;
+        max-width: 49%;
+        flex-grow: 1;
+        margin: 0.15rem;
+    }
+    
+}
+@media screen and (min-width:1215px){
+    .card{
+        width: auto;
+        max-width: 30%;
+    }
+}
+
+@media screen and (min-width:890px) {
+    .media{
+        flex-direction: column; 
+        
+        /* align-items: end; */
+    }
+    #card-btn{
+        margin-left: 0rem;
+       
+        
+    }
+    .media-content{
+        /* min-height: 300px;  */
+        text-align: center;
+        align-items: center;
+        /* width: none; */
+    }
+    .section{
+        justify-content: space-between;
+    }
+    /* #volunteer-email{
+        text-align: end;
+        margin-right: 1rem;
+    } */
+    /* #phone-number,#city-state{
+        text-align: center;
+    } */
+    /* #card-btn{
+        margin-left: 1rem;
+       
+        
+    } */
+    /* .content{
+        text-align: center;
+    } */
+
+    
+}
+/* bulma override */
+@media screen and (min-width: 1605px){
+    .container:not(.is-max-desktop):not(.is-max-widescreen) {
+        max-width: none;
+    }
+   
+}
+@media screen and (min-width:1605px) {
+    
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+        
+        justify-content: space-around;
+    }
+    .card{
+        width: auto;
+        max-width: 23%;
+        flex-grow: 1;
+        /* margin: 0.15rem; */
+    }
+    
+}
