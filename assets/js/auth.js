@@ -161,6 +161,11 @@ function loadFirebase() {
 
           signInBtnGoogle.addEventListener("click", () => {
             // Add a click event listener to the sign-in button
+
+            //clear form
+            userEmail.value = "";
+            userPassword.value = "";
+            
             fireAuth
               .signInWithPopup(auth, provider) // Sign in with a popup window
               .then((result) => {
