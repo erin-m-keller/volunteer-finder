@@ -170,6 +170,9 @@
    height: 15em;
    margin: 0 auto;
  } 
+ #success {
+  display: none;
+ }
  /* modal style */
  .modal-content{
    color: #FFF;

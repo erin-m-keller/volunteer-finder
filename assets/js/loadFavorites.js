@@ -63,6 +63,17 @@ function loadPreferredUsers() {
   } catch (error) {}
 }
 
+/**
+ * @closeSuccessModal
+ * Closes the success modal
+ */
+function closeSuccessModal () {
+  // initialize variables
+  let confirmModal = document.getElementById("success");
+  // add class is-active
+  confirmModal.style.display = "none";
+}
+
 function createUserCard(cardData) {
   let card = document.createElement("div");
   card.classList.add("card");
@@ -130,11 +141,16 @@ function createUserCard(cardData) {
     history.go(-1);
   });
 
-  let successMsg = document.createElement("div");
-  successMsg.classList.add("notification");
-  successMsg.classList.add("is-primary");
-  successMsg.id = "success";
-  successMsg.textContent = "User added to favorites!";
+  let successMsg = document.getElementById("success"),
+      closeBtn = document.createElement("button"),
+      successPara = document.createElement("p"),
+      paraTxtNode = document.createTextNode("User added to favorites!");
+  successPara.appendChild(paraTxtNode);
+  successMsg.appendChild(successPara);
+  closeBtn.classList.add("delete");
+  closeBtn.setAttribute("aria-label","close");
+  closeBtn.onclick = closeSuccessModal;
+  successMsg.appendChild(closeBtn);
   successMsg.style.display = "none";
 
   let mapDiv = document.createElement("div");
