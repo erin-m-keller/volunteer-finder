@@ -85,7 +85,7 @@ used, screenshot, and link to the deployed application).
 
 **Kevin Rhode**: HTML, CSS, "Volunteer List Page" (not including Header), Handle Random-Data-Api, JavaScript loadUsers(init, createUserCard, retriveUsers), modaljs.js, Bug Fixes
 **Joshua Cavell**: Wireframe, Firebase Auth, Things here and there  
-**Dylan Wednieski**: [tasks go here]  
+**Dylan Wednieski**: Google Maps API, About page, Feedback help  
 **Erin Keller**: HTML, CSS, JavaScript, "Login" page (not including authentication), "My Account" page, Assisted with bug fixes
 
 ## Screenshot
