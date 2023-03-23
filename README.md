@@ -40,7 +40,7 @@ GIVEN an account has been created
 WHEN I sign-in/sign-up to the website
 THEN I view the main page
 WHEN I view the main page
-THEN I am presented with a list of available volunteers (avatar, name)
+THEN I am presented with a selection of available volunteers (avatar, name)
 WHEN I click a volunteer
 THEN I am presented with their information (avatar, name, city/state, phone/email)  
 a map with their location, a link to contact the volunteer, and a button to  
@@ -94,7 +94,7 @@ used, screenshot, and link to the deployed application).
 
 ## Deployed page
 
-[View Published Page](https://erin-m-keller.github.io/project-one/)
+[View Published Page](https://erin-m-keller.github.io/volunteer-finder/)
 
 ## License
 
