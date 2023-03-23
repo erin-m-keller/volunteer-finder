@@ -83,7 +83,7 @@ used, screenshot, and link to the deployed application).
 
 ## The Team Tasks
 
-**Kevin Rhode**: [tasks go here]  
+**Kevin Rhode**: HTML, CSS, "Volunteer List Page" (not including Header), Handle Random-Data-Api, JavaScript loadUsers(init, createUserCard, retriveUsers), modaljs.js, Bug Fixes
 **Joshua Cavell**: Wireframe, Firebase Auth, Things here and there  
 **Dylan Wednieski**: [tasks go here]  
 **Erin Keller**: HTML, CSS, JavaScript, "Login" page (not including authentication), "My Account" page, Assisted with bug fixes
