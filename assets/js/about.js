@@ -13,4 +13,17 @@ signOutBtn.addEventListener("click", () => {
   });
 }
 
+function toggleMobileMenu () {
+    let burgerBtn = document.getElementById("burger-btn"),
+        navMenu = document.getElementById("nav-menu");
+    if (burgerBtn.classList.contains("is-active")) {
+      burgerBtn.classList.remove("is-active");
+      navMenu.classList.remove("is-active");
+    } else {
+      burgerBtn.classList.add("is-active");
+      navMenu.classList.add("is-active");
+    }
+  }
+  
+  
 init();
