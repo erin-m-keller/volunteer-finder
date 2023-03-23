@@ -40,7 +40,7 @@ GIVEN an account has been created
 WHEN I sign-in/sign-up to the website
 THEN I view the main page
 WHEN I view the main page
-THEN I am presented with a list of available volunteers (avatar, name, city/state)
+THEN I am presented with a list of available volunteers (avatar, name)
 WHEN I click a volunteer
 THEN I am presented with their information (avatar, name, city/state, phone/email)  
 a map with their location, a link to contact the volunteer, and a button to  
@@ -83,7 +83,7 @@ used, screenshot, and link to the deployed application).
 
 ## The Team Tasks
 
-**Kevin Rhode**: HTML, CSS, "Volunteer List Page" (not including Header), Handle Random-Data-Api, JavaScript loadUsers(init, createUserCard, retriveUsers), modaljs.js, Bug Fixes
+**Kevin Rhode**: HTML, CSS, "Volunteer List Page" (not including Header), Handle Random-Data-Api, JavaScript loadUsers(init, createUserCard, retriveUsers), modaljs.js, Bug Fixes  
 **Joshua Cavell**: Wireframe, Firebase Auth, Things here and there  
 **Dylan Wednieski**: Google Maps API, About page, Feedback help  
 **Erin Keller**: HTML, CSS, JavaScript, "Login" page (not including authentication), "My Account" page, Assisted with bug fixes
