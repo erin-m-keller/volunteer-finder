@@ -1,4 +1,4 @@
-# Fullstack Developer Bootcamp - Project One
+# Volunteer Finder
 
 ## Description
 
