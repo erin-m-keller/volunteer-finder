@@ -30,7 +30,7 @@ function initMap () {
 };
 
 function init() {
-
+  //infinite-scroll - adds more volunteers
   window.addEventListener('scroll',()=>{
     const {
       scrollTop,
@@ -113,10 +113,10 @@ function retriveUsers(numHowManyUsersYouWant) {
       //maybe give it a card
 
       for (let index = 0; index < data.length; index++) {
-        //appendChild form the methond that has the card
+        //appendChild with card
         document
-          .querySelector(".container")
-          .append(createUserCard(data[index]));
+          .querySelector(".container")//select the container and add a card
+          .append(createUserCard(data[index]));//append and give it createUserCard funtion to return a class card element with the information give, Random Data Api Object
         // let currentUser = createUserCard(data[index]);
       }
       // showUsersOnMap(data);
@@ -134,6 +134,7 @@ function loadPreferredUsers() {
 function createUserCard(cardData) {
   let card = document.createElement("div");
   card.classList.add("card");
+  //add info for maps api
   card.dataset.lat = cardData.address.coordinates.lat;
   card.dataset.lng = cardData.address.coordinates.lng;
 
@@ -165,6 +166,7 @@ function createUserCard(cardData) {
   //set firstname and lastname for card
   title.textContent = `${cardData.first_name} ${cardData.last_name}`;
 
+  //styling change removed this info from VL
   let subtitle = document.createElement("p");
   subtitle.classList.add("subtitle");
   subtitle.classList.add("is-4");
@@ -176,6 +178,7 @@ function createUserCard(cardData) {
   let content = document.createElement("div");
   content.classList.add("content");
 
+  //styling change removed this info from VL
   let address = document.createElement("address")
   let pPhone = document.createElement('div');
   let pCityState = document.createElement('div');
@@ -200,12 +203,14 @@ function createUserCard(cardData) {
 });
 
   mediaContent.append(title);
+  //styling change removed this info from VL
   // mediaContent.append(subtitle);
   figure.append(img);
   mediaLeft.append(figure);
   media.append(mediaLeft);
   media.append(mediaContent);
   cardContent.append(media);
+  //styling change removed this info from VL
   // mediaContent.append(content);
   mediaContent.append(button);
   card.append(cardContent);
