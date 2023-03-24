@@ -113,7 +113,7 @@ function retriveUsers(numHowManyUsersYouWant) {
       //maybe give it a card
 
       for (let index = 0; index < data.length; index++) {
-        //appendChild from the methond that has the card
+        //appendChild with card
         document
           .querySelector(".container")//select the container and add a card
           .append(createUserCard(data[index]));//append and give it createUserCard funtion to return a class card element with the information give, Random Data Api Object
